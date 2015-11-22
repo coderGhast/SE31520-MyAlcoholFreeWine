@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Wines</h1>
+
+<table>
+  <% @wines.each do |wine| %>
+      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
+        <td>
+          <%= image_tag(wine.image_url, class: 'list_image') %>
+        </td>
+        <td class="list_description">
+          <dl>
+            <dt><%= wine.name %></dt>
+            <dd><%= truncate(strip_tags(wine.description), length: 70) %></dd>
+          </dl>
+        </td>
+        <td class="list_description">
+          <dl>
+            <dt>Wine Information</dt>
+            <dd>Price: £<%= wine.price %></dd>
+            <dd>Size:<%= wine.bottle_size %></dd>
+            <dd>Grape: <%= wine.grape_type %></dd>
+            <dd>Country of Origin: <%= wine.country_of_origin %></dd>
+            <dd>Suitable For Vegetarians: <%= wine.suitable_for_vegetarians %></dd>
+          </dl>
+        </td>
+        <td class="list_actions">
+          <%= link_to 'Show', wine %><br/>
+          <%= link_to 'Edit', edit_wine_path(wine) %><br/>
+          <%= link_to 'Destroy', wine, method: :delete,
+                      data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+  <% end %>
+</table>
+
+<br>
+
+<%= link_to 'New Wine', new_wine_path %>
