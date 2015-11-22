@@ -3,6 +3,16 @@ require 'test_helper'
 class WinesControllerTest < ActionController::TestCase
   setup do
     @wine = wines(:one)
+    @update = {
+        name: 'Test Wine',
+        description: 'The best wine',
+        price: 10.90,
+        grape_type: 'Red',
+        suitable_for_vegetarians: false,
+        bottle_size: '150ml',
+        image_url: 'wine1.jpg',
+        country_of_origin: 'USA'
+    }
   end
 
   test "should get index" do
@@ -18,7 +28,7 @@ class WinesControllerTest < ActionController::TestCase
 
   test "should create wine" do
     assert_difference('Wine.count') do
-      post :create, wine: { bottle_size: @wine.bottle_size, country_of_origin: @wine.country_of_origin, description: @wine.description, grape_type: @wine.grape_type, image_url: @wine.image_url, name: @wine.name, price: @wine.price, suitable_for_vegetarians: @wine.suitable_for_vegetarians }
+      post :create, wine: @update
     end
 
     assert_redirected_to wine_path(assigns(:wine))
@@ -35,7 +45,7 @@ class WinesControllerTest < ActionController::TestCase
   end
 
   test "should update wine" do
-    patch :update, id: @wine, wine: { bottle_size: @wine.bottle_size, country_of_origin: @wine.country_of_origin, description: @wine.description, grape_type: @wine.grape_type, image_url: @wine.image_url, name: @wine.name, price: @wine.price, suitable_for_vegetarians: @wine.suitable_for_vegetarians }
+    patch :update, id: @wine, wine: @update
     assert_redirected_to wine_path(assigns(:wine))
   end
 

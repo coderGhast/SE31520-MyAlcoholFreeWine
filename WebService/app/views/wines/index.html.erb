@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Wines</h1>
+<h1>Wine Catalogue</h1>
 
 <table>
   <% @wines.each do |wine| %>
@@ -11,7 +11,7 @@
         <td class="list_description">
           <dl>
             <dt><%= wine.name %></dt>
-            <dd><%= truncate(strip_tags(wine.description), length: 70) %></dd>
+            <dd><%= strip_tags(wine.description) %></dd>
           </dl>
         </td>
         <td class="list_description">
