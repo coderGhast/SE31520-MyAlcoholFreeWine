@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Order Details</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Customeremail</th>
+      <th>Customerfirstname</th>
+      <th>Customersurname</th>
+      <th>Customerphone</th>
+      <th>Customeraddress</th>
+      <th>Productnumber</th>
+      <th>Quantity</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @order_details.each do |order_detail| %>
+      <tr>
+        <td><%= order_detail.customerEmail %></td>
+        <td><%= order_detail.customerFirstname %></td>
+        <td><%= order_detail.customerSurname %></td>
+        <td><%= order_detail.customerPhone %></td>
+        <td><%= order_detail.customerAddress %></td>
+        <td><%= order_detail.productNumber %></td>
+        <td><%= order_detail.quantity %></td>
+        <td><%= link_to 'Show', order_detail %></td>
+        <td><%= link_to 'Edit', edit_order_detail_path(order_detail) %></td>
+        <td><%= link_to 'Destroy', order_detail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Order detail', new_order_detail_path %>

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Customeremail:</strong>
+  <%= @order_detail.customerEmail %>
+</p>
+
+<p>
+  <strong>Customerfirstname:</strong>
+  <%= @order_detail.customerFirstname %>
+</p>
+
+<p>
+  <strong>Customersurname:</strong>
+  <%= @order_detail.customerSurname %>
+</p>
+
+<p>
+  <strong>Customerphone:</strong>
+  <%= @order_detail.customerPhone %>
+</p>
+
+<p>
+  <strong>Customeraddress:</strong>
+  <%= @order_detail.customerAddress %>
+</p>
+
+<p>
+  <strong>Productnumber:</strong>
+  <%= @order_detail.productNumber %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @order_detail.quantity %>
+</p>
+
+<%= link_to 'Edit', edit_order_detail_path(@order_detail) %> |
+<%= link_to 'Back', order_details_path %>
