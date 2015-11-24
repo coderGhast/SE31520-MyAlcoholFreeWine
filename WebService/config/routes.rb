@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   resources :order_details
   root 'wines#index'
-  resources :customers
   resources :order_details
   resources :wines
   # The priority is based upon order of creation: first created -> highest priority.
