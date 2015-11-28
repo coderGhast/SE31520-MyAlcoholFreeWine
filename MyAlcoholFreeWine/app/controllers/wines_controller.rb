@@ -1,4 +1,5 @@
 class WinesController < ApplicationController
+  before_action :set_current_page, except: [:index]
   before_action :set_wine, only: [:show]
 
   # GET /wines
@@ -11,7 +12,11 @@ class WinesController < ApplicationController
     ## NOTE: Later, Wine update from WebService should be a bit more efficient
 
     WebServiceCaller.new.get_web_service_wines
-    @wines = Wine.all
+
+    # Paginate the Wine results, in alphabetical order, not caring about capitalization.
+    @wines = Wine.paginate(page: params[:page],
+                           per_page: params[:per_page])
+                 .order('LOWER(name)')
   end
 
   # GET /wines/1

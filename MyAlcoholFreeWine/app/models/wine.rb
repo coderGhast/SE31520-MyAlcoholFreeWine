@@ -6,4 +6,6 @@ class Wine < ActiveRecord::Base
       with: %r{\.(gif|jpg|png)\Z}i,
       message: 'must be a URL for GIF, JPG or PNG image.'
   }
+
+  self.per_page = 5
 end

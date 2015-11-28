@@ -1,22 +1,25 @@
 class WebServiceCaller
+  attr_reader :web_service_uris
   attr_reader :wine_list_uris
   attr_reader :order_post_uris
 
   def initialize
-    @wine_list_uris = {:web_service_1 => 'localhost:3001/wines.json'}
-    @order_post_uris = {:web_service_1 => 'localhost:3001/order_details'}
+    @web_service_uris = {:web_service_1 => 'localhost:3001'}
+    @wine_list_uris = {:web_service_1 => '/wines.json'}
+    @order_post_uris = {:web_service_1 => '/order_details'}
   end
 
   def get_web_service_wines
-    resource = RestClient::Resource.new @wine_list_uris[:web_service_1]
+    resource = RestClient::Resource.new (@web_service_uris[:web_service_1] + @wine_list_uris[:web_service_1])
     @response = resource.get
 
     @result = JSON.parse(@response)
     @result.each do |new_wine|
-      new_wine['image_url'] = new_wine['url'] << new_wine['image_url']
+      new_wine['image_url'] = @web_service_uris[:web_service_1] + '/assets/' + new_wine['image_url']
+      new_wine['supplier'] = @web_service_uris[:web_service_1]
       new_wine.delete('url')
       new_wine.delete('id')
-      new_wine['supplier'] = 'webservice1'
+
       @thing = Wine.create(new_wine)
       if(Wine.find_by name: @thing.name)
         # Do something with price

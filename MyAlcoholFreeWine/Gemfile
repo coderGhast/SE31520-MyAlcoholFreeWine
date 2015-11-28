@@ -47,3 +47,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # For REST calls to Web Services
 gem 'rest-client'
+
+# To Paginate the list of Wines
+gem 'will_paginate', '~> 3.0.5'
