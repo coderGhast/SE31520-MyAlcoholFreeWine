@@ -13,25 +13,33 @@ class WebServiceCaller
   def get_web_service_wines
     resource = RestClient::Resource.new (@web_service_uris[:web_service_1] + @wine_list_uris[:web_service_1])
     @response = resource.get
-
     @result = JSON.parse(@response)
 
-    @result.each do |new_wine|
-      new_wine['image_url'] = @web_service_uris[:web_service_1] + '/assets/' + new_wine['image_url']
-      new_wine['supplier'] = @web_service_uris[:web_service_1]
-      new_wine.delete('url')
-      new_wine.delete('id')
+    @result.each do |web_service_wine|
+      web_service_wine['image_url'] = @web_service_uris[:web_service_1] + '/assets/' + web_service_wine['image_url']
+      web_service_wine['supplier'] = @web_service_uris[:web_service_1]
+      web_service_wine.delete('url')
+      web_service_wine.delete('id')
 
-      @thing = Wine.create(new_wine)
-      if(Wine.find_by name: @thing.name)
-        # Do something with price
-      else
-        @thing.save
-      end
+      wine_needs_update_or_create(web_service_wine)
     end
 
     delete_removed_wines(@result)
+  end
 
+  private def wine_needs_update_or_create(web_service_wine)
+    @web_service_wine_object = Wine.create(web_service_wine)
+    # Check that the wine already exists in the table
+    if(@existing_wine = Wine.find_by name: @web_service_wine_object.name)
+      # If the wine does exist in the table, then check if an attribute has changed
+      if @existing_wine != @web_service_wine_object
+        # update the attributes of the wine if something has changed (could be anything, update all - could be more efficient)
+        @existing_wine.update(web_service_wine)
+        puts 'STARSCREAM'
+      end
+    else
+      @web_service_wine_object.save
+    end
   end
 
   private def delete_removed_wines(web_service_wines)
