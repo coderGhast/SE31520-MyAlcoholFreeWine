@@ -2,6 +2,7 @@ class WebServiceCaller
   attr_reader :web_service_uris
   attr_reader :wine_list_uris
   attr_reader :order_post_uris
+  @wine_still_exists = false
 
   def initialize
     @web_service_uris = {:web_service_1 => 'localhost:3001'}
@@ -14,6 +15,7 @@ class WebServiceCaller
     @response = resource.get
 
     @result = JSON.parse(@response)
+
     @result.each do |new_wine|
       new_wine['image_url'] = @web_service_uris[:web_service_1] + '/assets/' + new_wine['image_url']
       new_wine['supplier'] = @web_service_uris[:web_service_1]
@@ -28,6 +30,23 @@ class WebServiceCaller
       end
     end
 
+    delete_removed_wines(@result)
+
+  end
+
+  private def delete_removed_wines(web_service_wines)
+    @current_wines = Wine.all
+    @current_wines.each do |current_wine|
+      web_service_wines.each do |new_wine|
+        if current_wine['name'] == new_wine['name']
+          @wine_still_exists = true
+        end
+      end
+      unless @wine_still_exists
+        current_wine.delete
+      end
+      @wine_still_exists = false
+    end
   end
 
   def send_wine_order
