@@ -35,7 +35,6 @@ class WebServiceCaller
       if @existing_wine != @web_service_wine_object
         # update the attributes of the wine if something has changed (could be anything, update all - could be more efficient)
         @existing_wine.update(web_service_wine)
-        puts 'STARSCREAM'
       end
     else
       @web_service_wine_object.save
