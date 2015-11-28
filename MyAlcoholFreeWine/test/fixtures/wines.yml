@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  description: MyText
+  suitable_for_vegetarians: false
+  bottle_size: MyString
+  country_of_origin: MyString
+  grape_type: MyString
+  supplier: MyString
+  price: 9.99
+  image_url: MyString
+
+two:
+  name: MyString
+  description: MyText
+  suitable_for_vegetarians: false
+  bottle_size: MyString
+  country_of_origin: MyString
+  grape_type: MyString
+  supplier: MyString
+  price: 9.99
+  image_url: MyString

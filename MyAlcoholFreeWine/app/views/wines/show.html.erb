@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @wine.name %>
+</p>
+
+<p>
+  <%= image_tag(@wine.image_url, class: 'list_image') %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @wine.description %>
+</p>
+
+<p>
+  <strong>Suitable for vegetarians:</strong>
+  <%= @wine.suitable_for_vegetarians %>
+</p>
+
+<p>
+  <strong>Bottle size:</strong>
+  <%= @wine.bottle_size %>
+</p>
+
+<p>
+  <strong>Country of origin:</strong>
+  <%= @wine.country_of_origin %>
+</p>
+
+<p>
+  <strong>Grape type:</strong>
+  <%= @wine.grape_type %>
+</p>
+
+<p>
+  <strong>Supplier:</strong>
+  <%= @wine.supplier %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @wine.price %>
+</p>
+
+<!--%= link_to 'Add To Basket', create_order_path(@wine) %-->
+<%= link_to 'Back', wines_path %>

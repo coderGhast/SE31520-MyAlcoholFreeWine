@@ -28,8 +28,8 @@ class OrderDetailsController < ApplicationController
 
     respond_to do |format|
       if @order_detail.save
-        format.html { redirect_to @order_detail, notice: 'Order detail was successfully created.' }
-        format.json { render :show, status: :created, location: @order_detail }
+        format.html { render :nothing => true }
+        format.json { render status: 200, location: @order_detail }
       else
         format.html { render :new }
         format.json { render json: @order_detail.errors, status: :unprocessable_entity }

@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :order_details
   root 'wines#index'
   resources :order_details
   resources :wines
