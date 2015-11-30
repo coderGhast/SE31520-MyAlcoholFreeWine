@@ -2,15 +2,13 @@ class WinesController < ApplicationController
   before_action :set_current_page, except: [:index]
   before_action :set_wine, only: [:show]
 
+  def set_current_page
+    @current_page = params[:page]
+  end
+
   # GET /wines
   # GET /wines.json
   def index
-    # Compare known Wines to WebService results
-    # Update any Wines that are found to be cheaper
-    # Remove any Wines that can't be found at all
-    # Display all Wines
-    ## NOTE: Later, Wine update from WebService should be a bit more efficient
-
     WebServiceCaller.new.get_web_service_wines
 
     # Paginate the Wine results, in alphabetical order, not caring about capitalization.

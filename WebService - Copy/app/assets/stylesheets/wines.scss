@@ -1,0 +1,45 @@
+.wines {
+  .table {
+    border-collapse: collapse;
+  }
+
+  table tr td{
+    padding: 5px;
+    vertical-align: top;
+  }
+
+  .list_image {
+    width: 50px;
+    height: 70px;
+  }
+
+  .list_description{
+    dl{
+      margin: 0;
+    }
+
+    dt{
+      color:#000000;
+      font-weight: bold;
+      font-size:12px;
+    }
+
+    dd{
+      color:#2E2F30;
+      margin:0;
+    }
+  }
+
+  .list_actions{
+    font-size:10px;
+    padding:5px;
+  }
+
+  .list_line_even{
+    background: #CCCCCC;
+  }
+
+  .list_line_odd{
+    background: #999999;
+  }
+}
