@@ -1,24 +1,18 @@
 class WebServiceCaller
-  attr_reader :web_service_uris
-  attr_reader :wine_list_uris
-  attr_reader :order_post_uris
   @wine_still_exists = false
 
-  def initialize
-    @web_service_uris = {:web_service_1 => 'localhost:3001'}
-    @wine_list_uris = {:web_service_1 => '/wines.json'}
-    @order_post_uris = {:web_service_1 => '/order_details'}
-  end
-
   def get_web_service_wines
-    resource = RestClient::Resource.new (@web_service_uris[:web_service_1] + @wine_list_uris[:web_service_1])
+    # Get the list of web services for Wine lists
+    @web_services_wine_lists = Rails.application.config.x.web_services_wine_lists
+
+    resource = RestClient::Resource.new @web_services_wine_lists[:web_service_1]
     @response = resource.get
     @result = JSON.parse(@response)
 
     @result.each do |web_service_wine|
-      web_service_wine['image_url'] = @web_service_uris[:web_service_1] + '/assets/' + web_service_wine['image_url']
-      web_service_wine['supplier'] = @web_service_uris[:web_service_1]
+      web_service_wine['supplier'] = :web_service_1
       web_service_wine.delete('url')
+      web_service_wine['product_number'] = web_service_wine['id']
       web_service_wine.delete('id')
 
       wine_needs_update_or_create(web_service_wine)
@@ -28,14 +22,24 @@ class WebServiceCaller
   end
 
   private def wine_needs_update_or_create(web_service_wine)
+    # Make a Wine to work with.
     @web_service_wine_object = Wine.create(web_service_wine)
     # Check that the wine already exists in the table
     if(@existing_wine = Wine.find_by name: @web_service_wine_object.name)
-      # If the wine does exist in the table, then check if an attribute has changed
-      if @existing_wine != @web_service_wine_object
-        # update the attributes of the wine if something has changed (could be anything, update all - could be more efficient)
-        @existing_wine.update(web_service_wine)
+      # If the wine does exist in the table, check the supplier
+      if @existing_wine[:supplier] == @web_service_wine_object[:supplier]
+        # Should the supplier be the same, see if updates are needed
+        if @existing_wine != @web_service_wine_object
+          # update the attributes of the wine if something has changed (could be anything, update all - could be more efficient)
+          @existing_wine.update(web_service_wine)
+        end
+      else
+        # If the supplier is different, compare the prices. We take the new supplier wine if it's cheaper
+        if @existing_wine[:price] > @web_service_wine_object[:price]
+          puts 'STARSCREAM'
+        end
       end
+
     else
       @web_service_wine_object.save
     end
@@ -57,14 +61,14 @@ class WebServiceCaller
   end
 
   def send_wine_order
-    resource = RestClient::Resource.new @order_post_uris
+    resource = RestClient::Resource.new Rails.application.config.x.web_services_order_placements[:web_service_1]
     @response = resource.post(
-        {:customerEmail=> 'test2@email.com',
-                   :customerFirstname => 'Joe',
-                   :customerSurname => 'Bloggs',
-                   :customerPhone => '051611219',
-                   :customerAddress => '50 Road, Place, Town',
-                   :productNumber =>'027502',
+        {:customer_email=> 'test2@email.com',
+                   :customer_firstname => 'Joe',
+                   :customer_surname => 'Bloggs',
+                   :customer_phone => '051611219',
+                   :customer_address => '50 Road, Place, Town',
+                   :product_number =>'027502',
                    :quantity => 2}.to_json,
         :content_type => :json)
 

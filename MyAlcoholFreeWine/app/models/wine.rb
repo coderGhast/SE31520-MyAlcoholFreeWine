@@ -7,7 +7,7 @@ class Wine < ActiveRecord::Base
       message: 'must be a URL for GIF, JPG or PNG image.'
   }
 
-  # Own defined comparison method to see if a wine is the same
+  # Own defined comparison method to see if a wine is the same, regardless of Product Number (supplier specific)
   def ==(another_wine)
     if self.name == another_wine['name']
       if self.country_of_origin == another_wine['country_of_origin']
@@ -16,7 +16,9 @@ class Wine < ActiveRecord::Base
             if self.suitable_for_vegetarians == another_wine['suitable_for_vegetarians']
               if self.bottle_size == another_wine['bottle_size']
                 if self.description == another_wine['description']
-                  return true
+                  if self.image_url == another_wine['image_url']
+                    return true
+                  end
                 end
               end
             end
