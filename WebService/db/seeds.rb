@@ -1,4 +1,5 @@
 Wine.delete_all
+Order.delete_all
 # -----
 Wine.create!(name: 'Bronco Bonus',
                 description:
@@ -39,3 +40,12 @@ Wine.create!(name: 'Constable\'s friend',
              suitable_for_vegetarians: false,
              grape_type: 'red',
              bottle_size: '500ml')
+
+#======
+Order.create!(customer_firstname: 'Joe',
+              customer_surname: 'Bloggs',
+              customer_email: 'email@email.com',
+              customer_phone: '2552352',
+              customer_address: '30 Place, Placeton, Placing',
+              quantity: 5,
+              product_number: 'onown3974')

@@ -11,18 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151124121849) do
+ActiveRecord::Schema.define(version: 20151130124841) do
 
-  create_table "order_details", force: :cascade do |t|
-    t.string   "customerEmail",     null: false
-    t.string   "customerFirstname", null: false
-    t.string   "customerSurname",   null: false
-    t.string   "customerPhone",     null: false
-    t.string   "customerAddress",   null: false
-    t.string   "productNumber",     null: false
-    t.integer  "quantity",          null: false
-    t.datetime "created_at",        null: false
-    t.datetime "updated_at",        null: false
+  create_table "orders", force: :cascade do |t|
+    t.string   "customer_email",     null: false
+    t.string   "customer_firstname", null: false
+    t.string   "customer_surname",   null: false
+    t.string   "customer_phone",     null: false
+    t.string   "customer_address",   null: false
+    t.string   "product_number",     null: false
+    t.integer  "quantity",           null: false
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
   end
 
   create_table "wines", force: :cascade do |t|
