@@ -6,11 +6,11 @@
   <% @wines.each do |wine| %>
       <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
         <td>
-          <%= link_to image_tag(wine.image_url, class: 'list_image'), wine %>
+          <%= link_to (image_tag(wine.image_url, class: 'list_image')), wine_path(wine, page:@current_page) %>
         </td>
         <td class="list_description">
           <dl>
-            <dt><%= link_to wine.name, wine %></dt>
+            <dt><%= link_to wine.name, wine_path(wine, page:@current_page) %></dt>
             <dd><%= truncate(strip_tags(wine.description), :length => 50) %></dd>
           </dl>
         </td>
@@ -24,7 +24,7 @@
       </tr>
   <% end %>
 </table>
-
+<%= page_entries_info @wines %>
 <%= will_paginate @wines %>
 
 <% @response %>

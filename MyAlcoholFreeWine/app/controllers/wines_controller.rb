@@ -1,10 +1,6 @@
 class WinesController < ApplicationController
-  before_action :set_current_page, except: [:index]
+  before_action :set_current_page
   before_action :set_wine, only: [:show]
-
-  def set_current_page
-    @current_page = params[:page]
-  end
 
   # GET /wines
   # GET /wines.json
@@ -27,6 +23,11 @@ class WinesController < ApplicationController
     def set_wine
       @wine = Wine.find(params[:id])
     end
+
+  private
+  def set_current_page
+    @current_page = params[:page] || 1
+  end
 
     # Never trust parameters from the scary internet, only allow the white list through.
   def wine_params

@@ -15,16 +15,6 @@
 </p>
 
 <p>
-  <strong>Suitable for vegetarians:</strong>
-  <%= @wine.suitable_for_vegetarians %>
-</p>
-
-<p>
-  <strong>Bottle size:</strong>
-  <%= @wine.bottle_size %>
-</p>
-
-<p>
   <strong>Country of origin:</strong>
   <%= @wine.country_of_origin %>
 </p>
@@ -35,8 +25,13 @@
 </p>
 
 <p>
-  <strong>Supplier:</strong>
-  <%= @wine.supplier %>
+  <strong>Suitable for vegetarians:</strong>
+  <%= @wine.suitable_for_vegetarians %>
+</p>
+
+<p>
+  <strong>Bottle size:</strong>
+  <%= @wine.bottle_size %>
 </p>
 
 <p>
@@ -44,5 +39,12 @@
   <%= @wine.price %>
 </p>
 
+<p>
+  <strong>Supplier:</strong>
+  <%= @wine.supplier %>
+</p>
+
+
+
 <!--%= link_to 'Add To Basket', create_order_path(@wine) %-->
-<%= link_to 'Back', wines_path %>
+<%= link_to 'Back', wines_path(page: @current_page) %>
