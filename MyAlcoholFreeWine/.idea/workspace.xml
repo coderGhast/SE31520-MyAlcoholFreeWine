@@ -14,7 +14,7 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/MyAlcoholFreeWine@Development__MyAlcoholFreeWine.coverage" NAME="Development: MyAlcoholFreeWine Coverage Results" MODIFIED="1448896349454" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="MyAlcoholFreeWine" />
+    <SUITE FILE_PATH="coverage/MyAlcoholFreeWine@Development__MyAlcoholFreeWine.coverage" NAME="Development: MyAlcoholFreeWine Coverage Results" MODIFIED="1448898613018" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="MyAlcoholFreeWine" />
     <SUITE FILE_PATH="coverage/MyAlcoholFreeWine@web_service_caller.coverage" NAME="web_service_caller Coverage Results" MODIFIED="1448728453636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/models" MODULE_NAME="MyAlcoholFreeWine" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -36,8 +36,8 @@
       <file leaf-file-name="web_service_caller.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/models/web_service_caller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.8854167">
-              <caret line="47" column="7" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="7" />
+            <state vertical-scroll-proportion="0.46875">
+              <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -859,8 +859,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/models/web_service_caller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8854167">
-          <caret line="47" column="7" selection-start-line="47" selection-start-column="7" selection-end-line="47" selection-end-column="7" />
+        <state vertical-scroll-proportion="0.46875">
+          <caret line="17" column="40" selection-start-line="17" selection-start-column="40" selection-end-line="17" selection-end-column="40" />
           <folding />
         </state>
       </provider>

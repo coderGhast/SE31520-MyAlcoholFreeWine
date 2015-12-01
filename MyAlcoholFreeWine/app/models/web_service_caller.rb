@@ -8,18 +8,23 @@ class WebServiceCaller
     web_services_wine_lists.each do |web_service|
       resource = RestClient::Resource.new web_service[1]
 
-      result = JSON.parse(resource.get)
 
-      result.each do |web_service_wine|
-        web_service_wine['supplier'] = web_service[1]
-        web_service_wine.delete('url')
-        web_service_wine['product_number'] = web_service_wine['id']
-        web_service_wine.delete('id')
+      begin
+        web_server_response = resource.get
+        result = JSON.parse(web_server_response)
 
-        wine_needs_update_or_create(web_service_wine)
+        result.each do |web_service_wine|
+          web_service_wine['supplier'] = web_service[1]
+          web_service_wine.delete('url')
+          web_service_wine['product_number'] = web_service_wine['id']
+          web_service_wine.delete('id')
+
+          wine_needs_update_or_create(web_service_wine)
+        end
+
+        delete_removed_wines(result)
+      rescue
       end
-
-      delete_removed_wines(result)
     end
   end
 
