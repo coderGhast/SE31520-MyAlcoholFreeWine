@@ -5,8 +5,8 @@ class WinesController < ApplicationController
   # GET /wines
   # GET /wines.json
   def index
-    WebServiceCaller.new.get_web_service_wines
-
+    # get the current list of wines and update our records
+    WebServiceCaller.new.update_web_service_wines
     # Paginate the Wine results, in alphabetical order, not caring about capitalization.
     @wines = Wine.paginate(page: params[:page],
                            per_page: params[:per_page])
