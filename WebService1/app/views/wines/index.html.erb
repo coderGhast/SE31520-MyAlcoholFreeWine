@@ -5,9 +5,6 @@
 <table>
   <% @wines.each do |wine| %>
       <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">
-        <td>
-          <%= image_tag(wine.image_url, class: 'list_image') %>
-        </td>
         <td class="list_description">
           <dl>
             <dt><%= wine.name %></dt>
