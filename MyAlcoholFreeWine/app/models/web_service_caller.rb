@@ -11,7 +11,6 @@ class WebServiceCaller
         result = JSON.parse(web_server_response)
 
         result.each do |web_service_wine|
-          web_service_wine['supplier'] = web_service[1]
           web_service_wine.delete('url')
           web_service_wine['product_number'] = web_service_wine['id']
           web_service_wine.delete('id')
@@ -38,8 +37,10 @@ class WebServiceCaller
         if web_service_wine_object[:price] < existing_wine[:price]
           existing_wine.update(web_service_wine)
         end
+      end
       # update the attributes of the wine if something has changed (could be anything, update all - could be more efficient)
-      else existing_wine != web_service_wine_object
+      if existing_wine == web_service_wine_object && web_service_wine_object[:supplier] == existing_wine[:supplier]
+      else
         existing_wine.update(web_service_wine)
       end
     end
@@ -50,6 +51,8 @@ class WebServiceCaller
     current_wines = Wine.all
     # For each wine we currently have
     current_wines.each do |current_wine|
+      # If the Wine is from the provided supplier, we can remove it if needed
+      if web_service_wines.first['supplier'] == current_wine['supplier']
         # Go through the wines we got from this supplier
         web_service_wines.each do |web_service_wine|
           # If the Wine ProductId doesn't exist anymore, this shouldn't become true and we can delete it
@@ -60,8 +63,9 @@ class WebServiceCaller
         unless wine_still_exists
           current_wine.delete
         end
-        wine_still_exists = false
       end
+      wine_still_exists = false
+    end
   end
 
   def send_wine_order

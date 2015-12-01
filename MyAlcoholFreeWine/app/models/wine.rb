@@ -9,15 +9,15 @@ class Wine < ActiveRecord::Base
 
   # Own defined comparison method to see if a wine is the same, regardless of Product Number (supplier specific)
   def ==(another_wine)
-    if self.name == another_wine['supplier']
-      if self.name == another_wine['name']
-        if self.country_of_origin == another_wine['country_of_origin']
-          if self.price == another_wine['price']
-            if self.grape_type == another_wine['grape_type']
-              if self.suitable_for_vegetarians == another_wine['suitable_for_vegetarians']
-                if self.bottle_size == another_wine['bottle_size']
-                  if self.description == another_wine['description']
-                    if self.image_url == another_wine['image_url']
+    if self.supplier == another_wine['supplier']
+      else if self.name == another_wine['name']
+        else if self.country_of_origin == another_wine['country_of_origin']
+          else if self.price == another_wine['price']
+            else if self.grape_type == another_wine['grape_type']
+              else if self.suitable_for_vegetarians == another_wine['suitable_for_vegetarians']
+                else if self.bottle_size == another_wine['bottle_size']
+                  else if self.description == another_wine['description']
+                    else if self.image_url == another_wine['image_url']
                       return true
                     end
                   end
