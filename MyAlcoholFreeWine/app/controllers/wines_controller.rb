@@ -19,9 +19,13 @@ class WinesController < ApplicationController
   end
 
   def search
-    search = Wine.search { fulltext params[:search] }
+    search = Wine.search do
+      fulltext params[:search]
+      paginate :page => params[:page], :per_page => params[:per_page]
+    end
 
     @wines = search.results
+
     render 'index'
   end
 

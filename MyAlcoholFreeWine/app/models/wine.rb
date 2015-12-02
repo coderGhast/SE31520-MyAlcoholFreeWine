@@ -1,11 +1,14 @@
 class Wine < ActiveRecord::Base
   searchable do
-    text :name, :as => :name_textp
-    text :description, :as => :description_textp
-    text :grape_type, :as => :grape_type_textp
+    text :name
+    text :description
+    text :grape_type
+    text :country_of_origin
+    text :bottle_size
+    text :supplier
 
     #boolean :suitable_for_vegetarians
-    #double  :price
+    text  :price
   end
 
   validates :name, :description, :grape_type, :price, :country_of_origin, :bottle_size, :image_url, :supplier, presence: true
