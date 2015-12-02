@@ -50,3 +50,7 @@ gem 'rest-client'
 
 # To Paginate the list of Wines
 gem 'will_paginate', '~> 3.0.5'
+
+# For Search
+gem 'sunspot_rails'
+gem 'sunspot_solr'
