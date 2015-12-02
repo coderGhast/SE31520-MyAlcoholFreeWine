@@ -11,6 +11,7 @@
 
 <p>
   <strong>Description:</strong>
+  <br />
   <%= @wine.description %>
 </p>
 
@@ -26,7 +27,7 @@
 
 <p>
   <strong>Suitable for vegetarians:</strong>
-  <%= @wine.suitable_for_vegetarians %>
+  <%= human_boolean(@wine.suitable_for_vegetarians) %>
 </p>
 
 <p>

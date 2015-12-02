@@ -7,25 +7,22 @@ class WinesController < ApplicationController
   # GET /wines
   # GET /wines.json
   def index
-    # get the current list of wines and update our records
-    # WebServiceCaller.new.update_web_service_wines
     # Paginate the Wine results, in alphabetical order, not caring about capitalization.
     @wines = Wine.paginate(page: params[:page],
                            per_page: params[:per_page])
                  .order('LOWER(name)')
-
-
-
   end
 
+  # When we search for something with our Search box, use Solr to look for it, or parts of the word, and paginate our results too.
   def search
     search = Wine.search do
       fulltext params[:search]
       paginate :page => params[:page], :per_page => params[:per_page]
     end
 
+    # Assign our search results to the wines to display, and render it the same as our index.
     @wines = search.results
-
+    @wines.index
     render 'index'
   end
 

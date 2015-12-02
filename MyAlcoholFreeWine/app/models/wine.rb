@@ -1,5 +1,5 @@
 class Wine < ActiveRecord::Base
-  searchable do
+  searchable  :auto_index => false do
     text :name
     text :description
     text :grape_type
@@ -7,7 +7,7 @@ class Wine < ActiveRecord::Base
     text :bottle_size
     text :supplier
 
-    #boolean :suitable_for_vegetarians
+    boolean :suitable_for_vegetarians
     text  :price
   end
 
@@ -29,7 +29,7 @@ class Wine < ActiveRecord::Base
     if self.supplier == another_wine['supplier']
       else if self.name == another_wine['name']
         else if self.country_of_origin == another_wine['country_of_origin']
-          else if self.price == another_wine['price']
+          else if self.price == another_wine['price'].to_d
             else if self.grape_type == another_wine['grape_type']
               else if self.suitable_for_vegetarians == another_wine['suitable_for_vegetarians']
                 else if self.bottle_size == another_wine['bottle_size']

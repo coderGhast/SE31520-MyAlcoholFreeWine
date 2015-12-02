@@ -54,3 +54,6 @@ gem 'will_paginate', '~> 3.0.5'
 # For Search
 gem 'sunspot_rails'
 gem 'sunspot_solr'
+
+# Make making async job calls to the web services
+gem 'sucker_punch'
