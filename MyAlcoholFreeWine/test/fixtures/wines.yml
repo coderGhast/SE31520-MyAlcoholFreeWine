@@ -10,6 +10,7 @@ one:
   supplier: MyString
   price: 9.99
   image_url: MyString
+  product_number: 1
 
 two:
   name: MyString
@@ -21,3 +22,16 @@ two:
   supplier: MyString
   price: 9.99
   image_url: MyString
+  product_number: 2
+
+fancy:
+  name: FancyWine
+  description: Fancy Wine for fancy people
+  suitable_for_vegetarians: false
+  bottle_size: 300ml
+  country_of_origin: France
+  grape_type: White
+  supplier: Wine People
+  price: 9.99
+  image_url: wine.jpg
+  product_number: 3

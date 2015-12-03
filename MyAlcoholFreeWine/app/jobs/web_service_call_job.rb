@@ -8,7 +8,8 @@ class WebServiceCallJob
        WebServiceCaller.new.update_web_service_wines(web_service[1])
     end
 
-    WebServiceCallJob.new.async.later(40)
+    # At the end of the Web Service call, set it to be called again in 40 seconds, asynchronously
+    WebServiceCallJob.new.async.later(60)
   end
 
   def later(sec)

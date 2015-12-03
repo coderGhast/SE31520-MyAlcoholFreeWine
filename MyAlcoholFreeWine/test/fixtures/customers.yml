@@ -11,3 +11,9 @@ two:
   surname: MyString
   address: MyString
   email: MyString
+
+joe:
+  firstname: Joe
+  surname: Bloggs
+  address: 123 Lane, Placeton
+  email: some@email.com

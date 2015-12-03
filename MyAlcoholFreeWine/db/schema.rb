@@ -11,13 +11,39 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151130142600) do
+ActiveRecord::Schema.define(version: 20151203173428) do
+
+  create_table "basket_items", force: :cascade do |t|
+    t.integer  "wine_id"
+    t.integer  "basket_id"
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+    t.integer  "quantity",   default: 1
+    t.integer  "order_id"
+  end
+
+  add_index "basket_items", ["basket_id"], name: "index_basket_items_on_basket_id"
+  add_index "basket_items", ["order_id"], name: "index_basket_items_on_order_id"
+  add_index "basket_items", ["wine_id"], name: "index_basket_items_on_wine_id"
+
+  create_table "baskets", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "customers", force: :cascade do |t|
     t.string   "firstname",  null: false
     t.string   "surname",    null: false
     t.string   "address",    null: false
     t.string   "email",      null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string   "name"
+    t.text     "address"
+    t.string   "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

@@ -1,0 +1,25 @@
+<% if notice %>
+    <p id="notice"><%= notice %></p>
+<% end %>
+
+<table>
+  <h2>Your Basket</h2>
+
+  <% @basket.basket_items.each do |item| %>
+      <tr>
+
+  <td><%= item.wine.name %></td>
+  <td>&times;<%= item.quantity %></td>
+  <td class="item_price"><%= (item.total_price) %></td>
+  </tr>
+  <% end %>
+  <tr class="total_line">
+  <td colspan="2">Total</td>
+  <td class="total_cell"><%= number_to_currency(@basket.total_price) %></td>
+</table>
+
+<%= button_to 'Checkout', new_order_path, method: :get %>
+<%= button_to 'Empty basket', @basket, method: :delete,
+    data: { confirm: 'Are you sure?' } %>
+
+<%= link_to 'Back', wines_path %>

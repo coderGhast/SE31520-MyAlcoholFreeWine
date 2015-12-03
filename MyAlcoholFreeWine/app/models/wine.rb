@@ -1,5 +1,5 @@
 class Wine < ActiveRecord::Base
-  searchable  :auto_index => false do
+  searchable :auto_index => false do
     text :name
     text :description
     text :grape_type
@@ -10,6 +10,9 @@ class Wine < ActiveRecord::Base
     boolean :suitable_for_vegetarians
     text  :price
   end
+
+  has_many :basket_items
+  before_destroy :ensure_not_referenced_by_any_line_item
 
   validates :name, :description, :grape_type, :price, :country_of_origin, :bottle_size, :image_url, :supplier, presence: true
   validates :price, numericality: {greater_than_or_equal_to: 0.01};
@@ -48,4 +51,15 @@ class Wine < ActiveRecord::Base
 
     return false
   end
+
+  private
+  # ensure that there are no line items referencing this product
+  def ensure_not_referenced_by_any_line_item
+    if basket_items.empty?
+        return true
+        else
+            errors.add(:base, 'Basket Items present')
+            return false
+            end
+    end
 end

@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class CustomersControllerTest < ActionController::TestCase
+  fixtures :customers
   setup do
     @customer = customers(:one)
   end
@@ -16,13 +17,13 @@ class CustomersControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should create customer" do
-    assert_difference('Customer.count') do
-      post :create, customer: { address: @customer.address, email: @customer.email, firstname: @customer.firstname, surname: @customer.surname }
-    end
+  #test "should create customer" do
+  #  assert_difference('Customer.count') do
+  #    post :create, customer: { address: @customer.address, email: @customer.email, firstname: @customer.firstname, surname: @customer.surname }
+  #  end
 
-    assert_redirected_to customer_path(assigns(:customer))
-  end
+  #  assert_redirected_to customer_path(assigns(:customer))
+  #end
 
   test "should show customer" do
     get :show, id: @customer

@@ -47,7 +47,7 @@
 
 
 
-<!--%= link_to 'Add To Basket', create_order_path(@wine) %-->
+<%= button_to 'Add to Basket', basket_items_path(wine_id: @wine.id) %>
 <%= link_to 'Back', wines_path(page: @current_page) %>
 <%  if !@last_search.blank? %>
   <%= link_to 'Back to search results', wines_search_path(page: @current_page, search: @last_search) %>

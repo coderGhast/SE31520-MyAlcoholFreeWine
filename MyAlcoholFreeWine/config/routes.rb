@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :orders
+  resources :basket_items
+  resources :baskets
   post 'wines/search'
   get 'wines/search'
   resources :wines

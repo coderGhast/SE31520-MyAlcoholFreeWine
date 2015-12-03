@@ -28,6 +28,7 @@
             <dd><strong>Price:</strong> <%= number_to_currency(wine.price, :unit => '£') %></dd>
             <dd><strong>Size:</strong> <%= wine.bottle_size %></dd>
             <dd><strong>Supplier:</strong> <%= wine.supplier %></dd>
+            <%= button_to 'Add to Basket', basket_items_path(wine_id: wine.id) %>
           </dl>
         </td>
       </tr>
