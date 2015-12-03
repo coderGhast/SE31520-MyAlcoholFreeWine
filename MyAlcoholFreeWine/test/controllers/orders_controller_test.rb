@@ -5,6 +5,12 @@ class OrdersControllerTest < ActionController::TestCase
     @order = orders(:one)
   end
 
+  test "requires item in cart" do
+    get :new
+    assert_redirected_to wines_path
+    assert_equal flash[:notice], 'No items in your basket'
+  end
+
   test "should get index" do
     get :index
     assert_response :success
@@ -12,6 +18,11 @@ class OrdersControllerTest < ActionController::TestCase
   end
 
   test "should get new" do
+    item = BasketItem.new
+    item.build_basket
+    item.wine = wines(:fancy)
+    item.save!
+    session[:basket_id] = item.basket.id
     get :new
     assert_response :success
   end

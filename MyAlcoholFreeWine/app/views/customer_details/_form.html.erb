@@ -1,0 +1,32 @@
+<%= form_for(@customer_detail) do |f| %>
+  <% if @customer_detail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@customer_detail.errors.count, "error") %> prohibited this customer_detail from being saved:</h2>
+
+      <ul>
+      <% @customer_detail.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <fieldset>
+      <legend>Enter User Details</legend>
+      <div class="field">
+        <%= f.label :email, 'Email:' %>
+        <%= f.text_field :email, size: 40 %>
+      </div>
+      <div class="field">
+        <%= f.label :password, 'Password:' %>
+        <%= f.password_field :password, size: 40 %>
+      </div>
+      <div class="field">
+        <%= f.label :password_confirmation, 'Confirm:' %>
+        <%= f.password_field :password_confirmation, size: 40 %>
+      </div>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    </fieldset>
+<% end %>
