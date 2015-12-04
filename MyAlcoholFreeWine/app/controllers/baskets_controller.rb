@@ -64,6 +64,28 @@ class BasketsController < ApplicationController
     end
   end
 
+  def send_order
+    if session[:customer_detail_id]
+      current_basket = Basket.find_by id: session[:basket_id]
+      current_customer = Customer.find_by email: (CustomerDetail.find_by(id: session[:customer_detail_id]).email)
+
+      WebServiceCaller.new.send_wine_order(current_customer, current_basket)
+
+      respond_to do |format|
+        format.html { redirect_to wines_url,
+                                  notice: 'Your order has been placed. Thank you :)' }
+        format.json { head :no_content }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to login_url,
+                                  notice: 'Please login to continue checkout' }
+        format.json { head :no_content }
+      end
+    end
+
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_basket

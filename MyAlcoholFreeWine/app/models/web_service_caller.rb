@@ -61,17 +61,28 @@ class WebServiceCaller
     end
   end
 
-  def send_wine_order
-    resource = RestClient::Resource.new Rails.application.config.x.web_services_order_placements[:web_service_1]
-    @response = resource.post(
-        {:customer_email=> 'test2@email.com',
-                   :customer_firstname => 'Joe',
-                   :customer_surname => 'Bloggs',
-                   :customer_phone => '051611219',
-                   :customer_address => '50 Road, Place, Town',
-                   :product_number =>'027502',
-                   :quantity => 2}.to_json,
-        :content_type => :json)
+  def send_wine_order(customer, basket)
+    basket.basket_items.each do |item|
+      resource = get_web_service_address(item[:supplier])
+      unless resource.blank?
+        resource.post(
+            {:customer_email => customer[:email],
+             :customer_name => customer[:name],
+             :customer_address => customer[:address],
+             :product_number => item[:product_number],
+             :quantity => item[:quantity]}.to_json,
+            :content_type => :json)
+      end
+    end
 
+  end
+
+  private def get_web_service_address(supplier_name)
+    if supplier_name == 'Web Service A'
+      RestClient::Resource.new Rails.application.config.x.web_services_order_placements[:web_service_1]
+    end
+    if supplier_name == 'Web Service B'
+      RestClient::Resource.new Rails.application.config.x.web_services_order_placements[:web_service_2]
+    end
   end
 end

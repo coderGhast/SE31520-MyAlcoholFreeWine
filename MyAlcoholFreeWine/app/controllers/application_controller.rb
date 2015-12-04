@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   # Start the job for polling Web services
   WebServiceCallJob.new.async.later(40)
 
+  # For each page, check if the client is meant to be there (pages there are okay without being logged in are white listed)
   protected
   def authorize
     unless CustomerDetail.find_by(id: session[:customer_detail_id])
@@ -14,8 +15,15 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  # Get the customers email for displaying on the application view
   def get_customer_email
     CustomerDetail.find_by(id: session[:customer_detail_id])[:email]
   end
   helper_method :get_customer_email
+
+  # Get the customers name for displaying on the application view
+  def get_customer_name
+    Customer.find_by(email: CustomerDetail.find_by(id: session[:customer_detail_id])[:email])[:name]
+  end
+  helper_method :get_customer_name
 end

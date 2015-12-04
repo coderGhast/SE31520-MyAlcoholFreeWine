@@ -6,6 +6,10 @@ Rails.application.routes.draw do
     delete 'logout' => :destroy
   end
 
+  controller :baskets do
+    post 'send_order' => :send_order
+  end
+
   get 'sessions/new'
   get 'sessions/create'
   get 'sessions/destroy'

@@ -15,6 +15,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
+    # At the end of a login session, delete the customer id and basket id from the session.
     session[:customer_detail_id] = nil
     session[:basket_id] = nil
     redirect_to wines_url, notice: 'Logged out'
