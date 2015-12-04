@@ -7,7 +7,6 @@
     <tr>
       <th>Customer Email</th>
       <th>Customer Name</th>
-      <th>Customer Phone</th>
       <th>Customer Address</th>
       <th>Product Number</th>
       <th>Quantity</th>
@@ -19,8 +18,7 @@
     <% @orders.each do |order| %>
       <tr>
         <td><%= order.customer_email %></td>
-        <td><%= order.customer_firstname + ' ' + order.customer_surname %></td>
-        <td><%= order.customer_phone %></td>
+        <td><%= order.customer_name %></td>
         <td><%= order.customer_address %></td>
         <td><%= order.product_number %></td>
         <td><%= order.quantity %></td>

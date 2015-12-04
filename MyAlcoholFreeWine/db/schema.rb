@@ -47,7 +47,13 @@ ActiveRecord::Schema.define(version: 20151204223400) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "customers", ["email"], name: "index_customers_on_email"
+  create_table "orders", force: :cascade do |t|
+    t.string   "name"
+    t.text     "address"
+    t.string   "email"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "wines", force: :cascade do |t|
     t.string   "name"
