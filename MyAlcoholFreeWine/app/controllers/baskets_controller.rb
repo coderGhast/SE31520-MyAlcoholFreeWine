@@ -67,7 +67,7 @@ class BasketsController < ApplicationController
   def send_order
     if session[:customer_detail_id]
       current_basket = Basket.find_by id: session[:basket_id]
-      current_customer = Customer.find_by email: (CustomerDetail.find_by(id: session[:customer_detail_id]).email)
+      current_customer = Customer.find_by id: (CustomerDetail.find_by(id: session[:customer_detail_id]).customer_id)
 
       WebServiceCaller.new.send_wine_order(current_customer, current_basket)
 
