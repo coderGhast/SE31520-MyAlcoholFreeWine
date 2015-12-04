@@ -16,6 +16,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:customer_detail_id] = nil
+    session[:basket_id] = nil
     redirect_to wines_url, notice: 'Logged out'
   end
 end

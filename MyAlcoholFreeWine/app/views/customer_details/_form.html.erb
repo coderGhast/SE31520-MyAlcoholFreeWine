@@ -1,5 +1,5 @@
-<%= form_for(@customer_detail) do |f| %>
-  <% if @customer_detail.errors.any? %>
+<%= form_for(setup_customer(@customer_detail)) do |f| %>
+        <% if @customer_detail.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@customer_detail.errors.count, "error") %> prohibited this customer_detail from being saved:</h2>
 
@@ -22,14 +22,19 @@
         <%= f.password_field :password, size: 40 %>
       </div>
       <div class="field">
-        <%= f.fields_for :customer %>
-        <%= f.label :name, 'Name:' %>
-        <%= f.name_field :name, size: 40 %>
-      </div>
-      <div class="field">
         <%= f.label :password_confirmation, 'Confirm:' %>
         <%= f.password_field :password_confirmation, size: 40 %>
       </div>
+      <%= f.fields_for :customer do |ff|%>
+          <div class="field">
+            <%= ff.label :name, 'Name:' %>
+            <%= ff.text_field :name, size: 40 %>
+          </div>
+          <div class="field">
+            <%= ff.label :address, 'Address:' %>
+            <%= ff.text_field :address, size: 40 %>
+          </div>
+      <% end %>
       <div class="actions">
         <%= f.submit %>
       </div>

@@ -26,11 +26,15 @@ class CustomerDetailsController < ApplicationController
   # POST /customer_details.json
   def create
     @customer_detail = CustomerDetail.new(customer_detail_params)
-    @customer = Customer.new(customer_params)
+    # When we make a new CustomerDetail, also make a Customer to go with it, using the Email from CustomerDetail
+    customer_info = customer_detail_params['customer_attributes']
+    customer_info['email'] = customer_detail_params['email']
+    @customer = Customer.create(customer_info)
+    @customer_detail.customer = @customer
 
     respond_to do |format|
       if @customer_detail.save
-        format.html { redirect_to customer_details_url,
+        format.html { redirect_to wines_url,
                                   notice: "User #{@customer_detail.email} was successfully created." }
         format.json { render :show, status: :created, location: @customer_detail }
       else
@@ -73,6 +77,6 @@ class CustomerDetailsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def customer_detail_params
-      params.require(:customer_detail).permit(:email, :password, :password_confirmation)
+      params.require(:customer_detail).permit(:email, :password, :password_confirmation, customer_attributes: [:name, :address])
     end
 end
