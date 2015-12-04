@@ -12,7 +12,7 @@
   <% end %>
 
     <fieldset>
-      <legend>Enter User Details</legend>
+      <legend>Enter your details</legend>
       <div class="field">
         <%= f.label :email, 'Email:' %>
         <%= f.text_field :email, size: 40 %>
@@ -20,6 +20,11 @@
       <div class="field">
         <%= f.label :password, 'Password:' %>
         <%= f.password_field :password, size: 40 %>
+      </div>
+      <div class="field">
+        <%= f.fields_for :customer %>
+        <%= f.label :name, 'Name:' %>
+        <%= f.name_field :name, size: 40 %>
       </div>
       <div class="field">
         <%= f.label :password_confirmation, 'Confirm:' %>

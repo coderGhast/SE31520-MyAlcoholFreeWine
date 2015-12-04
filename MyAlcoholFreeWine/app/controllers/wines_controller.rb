@@ -1,4 +1,5 @@
 class WinesController < ApplicationController
+  skip_before_action :authorize
   before_action :set_current_page
   before_action :set_last_search
   before_action :set_wine, only: [:show]

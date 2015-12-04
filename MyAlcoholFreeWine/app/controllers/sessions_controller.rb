@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+  skip_before_action :authorize
+
   def new
   end
 
@@ -6,12 +8,14 @@ class SessionsController < ApplicationController
     customer_detail = CustomerDetail.find_by(email: params[:email])
     if customer_detail and customer_detail.authenticate(params[:password])
       session[:customer_detail_id] = customer_detail.id
-      # redirect_to admin_url
+      redirect_to wines_url
     else
-      redirect_to login_url, alert: "Invalid user/password combination"
+      redirect_to login_url, alert: 'Invalid email/password combination'
     end
   end
 
   def destroy
+    session[:customer_detail_id] = nil
+    redirect_to wines_url, notice: 'Logged out'
   end
 end

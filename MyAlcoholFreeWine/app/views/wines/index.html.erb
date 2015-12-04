@@ -1,7 +1,4 @@
 <p id="notice"><%= notice %></p>
-
-<h1><%= link_to 'Available, Cheapest Wines', wines_path(page:@current_page) %></h1>
-
 <p>
   <%= form_tag wines_search_path, :method => 'get' do %>
     <p>

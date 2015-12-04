@@ -7,7 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body class='<%= controller.controller_name %>'>
-
+<h1><%= link_to 'Available, Cheapest Wines', wines_path(page:@current_page) %></h1>
+<%= button_to 'Basket', basket_path(session[:basket_id]), method: :get %>
+<% if session[:customer_detail_id] %>
+    <p>Logged in as <%= get_customer_email %></p>
+  <%= button_to 'Logout', logout_path, method: :delete %>
+<% else %>
+  <%= button_to 'Login', login_path, method: :get %>
+  <%= button_to 'Register', new_customer_detail_url, method: :get %>
+<% end %>
 <%= yield %>
 
 </body>

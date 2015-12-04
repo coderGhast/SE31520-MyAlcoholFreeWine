@@ -1,4 +1,5 @@
 class CustomerDetailsController < ApplicationController
+  skip_before_action :authorize
   before_action :set_customer_detail, only: [:show, :edit, :update, :destroy]
 
   # GET /customer_details
@@ -25,6 +26,7 @@ class CustomerDetailsController < ApplicationController
   # POST /customer_details.json
   def create
     @customer_detail = CustomerDetail.new(customer_detail_params)
+    @customer = Customer.new(customer_params)
 
     respond_to do |format|
       if @customer_detail.save

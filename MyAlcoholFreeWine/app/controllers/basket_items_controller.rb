@@ -1,5 +1,6 @@
 class BasketItemsController < ApplicationController
   include CurrentBasket
+  skip_before_action :authorize, only: :create
   before_action :set_basket, only: [:create]
   before_action :set_basket_item, only: [:show, :edit, :update, :destroy]
 

@@ -1,4 +1,5 @@
 class BasketsController < ApplicationController
+  skip_before_action :authorize, only: [:show, :create, :update, :destroy]
   before_action :set_basket, only: [:show, :edit, :update, :destroy]
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_basket
   # GET /baskets
