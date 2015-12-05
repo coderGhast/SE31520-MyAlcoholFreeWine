@@ -4,9 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :authorize
 
-  # Start the job for polling Web services
-  WebServiceCallJob.new.async.later(40)
-
   # For each page, check if the client is meant to be there (pages there are okay without being logged in are white listed)
   protected
   def authorize
