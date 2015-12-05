@@ -20,10 +20,4 @@ class ApplicationController < ActionController::Base
     CustomerDetail.find_by(id: session[:customer_detail_id])[:email]
   end
   helper_method :get_customer_email
-
-  # Get the customers name for displaying on the application view
-  def get_customer_name
-    Customer.find_by(email: CustomerDetail.find_by(id: session[:customer_detail_id])[:email])[:name]
-  end
-  helper_method :get_customer_name
 end

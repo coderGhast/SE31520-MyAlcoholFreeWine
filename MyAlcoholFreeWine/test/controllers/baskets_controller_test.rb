@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class BasketsControllerTest < ActionController::TestCase
+  fixtures :baskets
   setup do
     @basket = baskets(:one)
   end

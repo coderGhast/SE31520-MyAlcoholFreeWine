@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class WinesControllerTest < ActionController::TestCase
+  fixtures :wines
   setup do
     @wine = wines(:one)
   end

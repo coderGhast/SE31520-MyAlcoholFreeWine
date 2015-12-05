@@ -1,19 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  firstname: MyString
-  surname: MyString
+  name: One
   address: MyString
-  email: MyString
+  email: one@email.com
 
 two:
-  firstname: MyString
-  surname: MyString
+  name: Two
   address: MyString
-  email: MyString
+  email: two@email.com
 
 joe:
-  firstname: Joe
-  surname: Bloggs
+  name: Bloggs
   address: 123 Lane, Placeton
   email: some@email.com

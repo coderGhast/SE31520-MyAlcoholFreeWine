@@ -7,3 +7,7 @@ one:
 two:
   email: testtwo@email.co.uk
   password_digest: <%= BCrypt::Password.create('secret') %>
+
+customer:
+  email: customer@email.com
+  password_digest: <%= BCrypt::Password.create('secret') %>

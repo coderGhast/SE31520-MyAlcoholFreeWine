@@ -1,6 +1,8 @@
 require 'test_helper'
 
 class CustomerDetailsControllerTest < ActionController::TestCase
+  fixtures :customer_details
+
   setup do
     @customer_detail = customer_details(:one)
   end
