@@ -20,10 +20,10 @@ class CustomerDetailsControllerTest < ActionController::TestCase
 
   test "should create customer_detail" do
     assert_difference('CustomerDetail.count') do
-      post :create, customer_details: { email: 'joe@email.com', password: 'password',password_confirmation: 'secret' }
+      post :create, customer_detail: { email: 'suchruby@email.com', password: 'secret',password_confirmation: 'secret', customer_attributes: {name: 'joe', address: 'whatever'} }
     end
 
-    assert_redirected_to customer_details_path
+    assert_redirected_to wines_url
   end
 
   test "should show customer_detail" do
@@ -34,11 +34,6 @@ class CustomerDetailsControllerTest < ActionController::TestCase
   test "should get edit" do
     get :edit, id: @customer_detail
     assert_response :success
-  end
-
-  test "should update customer_detail" do
-    patch :update, id: @customer_detail, customer_detail: { name: @customer_detail.name, password: 'secret', password_confirmation: 'secret' }
-    assert_redirected_to customer_details_path
   end
 
   test "should destroy customer_detail" do

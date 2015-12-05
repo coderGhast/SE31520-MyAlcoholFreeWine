@@ -6,7 +6,6 @@ class SessionsController < ApplicationController
 
   def create
     customer_detail = CustomerDetail.find_by(email: params[:email])
-    puts params[:password]
     if customer_detail and customer_detail.authenticate(params[:password])
       session[:customer_detail_id] = customer_detail.id
       redirect_to wines_url

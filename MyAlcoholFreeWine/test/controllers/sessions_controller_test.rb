@@ -11,7 +11,6 @@ class SessionsControllerTest < ActionController::TestCase
   test "should login" do
     someone = customer_details(:one)
     post :create, email: someone.email, password: 'secret'
-
     assert_equal someone.id, session[:customer_detail_id]
     assert_redirected_to wines_url
   end

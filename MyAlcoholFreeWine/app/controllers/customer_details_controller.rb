@@ -44,21 +44,6 @@ class CustomerDetailsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /customer_details/1
-  # PATCH/PUT /customer_details/1.json
-  def update
-    respond_to do |format|
-      if @customer_detail.update(customer_detail_params)
-        format.html { redirect_to customer_details_url,
-                                  notice: "User #{@customer_detail.email} was successfully created." }
-        format.json { render :show, status: :ok, location: @customer_detail }
-      else
-        format.html { render :edit }
-        format.json { render json: @customer_detail.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
   # DELETE /customer_details/1
   # DELETE /customer_details/1.json
   def destroy
