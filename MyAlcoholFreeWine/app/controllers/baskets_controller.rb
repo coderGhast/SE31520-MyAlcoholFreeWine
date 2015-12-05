@@ -13,6 +13,8 @@ class BasketsController < ApplicationController
   # GET /baskets/1
   # GET /baskets/1.json
   def show
+    # Remember where the user is so if they're not logged in here, we can bring them back after sign in.
+    session[:return_to] = request.url
   end
 
   # GET /baskets/new
