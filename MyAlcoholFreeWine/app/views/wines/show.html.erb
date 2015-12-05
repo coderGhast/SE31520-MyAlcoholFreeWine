@@ -37,15 +37,13 @@
 
 <p>
   <strong>Price:</strong>
-  <%= @wine.price %>
+  <%= number_to_currency(@wine.price, :unit => '£') %>
 </p>
 
 <p>
   <strong>Supplier:</strong>
   <%= @wine.supplier %>
 </p>
-
-
 
 <%= button_to 'Add to Basket', basket_items_path(wine_id: @wine.id) %>
 <%= link_to 'Back', wines_path(page: @current_page) %>

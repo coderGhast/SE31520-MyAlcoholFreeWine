@@ -4,7 +4,14 @@ class WinesController < ApplicationController
   # GET /wines
   # GET /wines.json
   def index
-    @wines = Wine.all
+    # Check the headers for the last request time, if it's blank, send all the wines for update
+    last_request_time =  request.headers['HTTP_LAST_REQUEST_TIME']
+    if last_request_time.blank?
+      @wines = Wine.all
+    else
+      # If there is a last request time, send all those that have been updated since the last request
+      @wines = Wine.where('updated_at > ?', last_request_time)
+    end
   end
 
   # GET /wines/1

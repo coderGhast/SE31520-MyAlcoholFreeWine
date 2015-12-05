@@ -1,4 +1,4 @@
-# Schedular help from https://richonrails.com/articles/background-tasks-with-rufus-scheduler
+# Scheduler help from https://richonrails.com/articles/background-tasks-with-rufus-scheduler
 require 'rufus-scheduler'
 
 scheduler = Rufus::Scheduler::singleton

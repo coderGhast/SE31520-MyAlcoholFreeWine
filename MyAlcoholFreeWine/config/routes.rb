@@ -10,6 +10,10 @@ Rails.application.routes.draw do
     post 'send_order' => :send_order
   end
 
+  controller :wines do
+    post 'add_to_basket' => :update
+  end
+
   get 'sessions/new'
   get 'sessions/create'
   get 'sessions/destroy'

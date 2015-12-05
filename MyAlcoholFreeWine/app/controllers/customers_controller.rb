@@ -1,3 +1,5 @@
+# Code based/modified from Agile Web Development with Rails Book by Andreas Schwarz, Dave Thomas,
+# David Heinemeier Hansson, James Duncan Davidson, Justin Gehtland, Leon Breedt, and Mike Clark
 class CustomersController < ApplicationController
   before_action :set_customer, only: [:show, :edit, :update, :destroy]
 

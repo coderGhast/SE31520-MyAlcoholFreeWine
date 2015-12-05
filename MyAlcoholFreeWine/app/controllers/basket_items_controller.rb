@@ -1,6 +1,8 @@
+# Code based/modified from Agile Web Development with Rails Book by Andreas Schwarz, Dave Thomas,
+# David Heinemeier Hansson, James Duncan Davidson, Justin Gehtland, Leon Breedt, and Mike Clark
 class BasketItemsController < ApplicationController
   include CurrentBasket
-  skip_before_action :authorize, only: :create
+  skip_before_action :authorize
   before_action :set_basket, only: [:create]
   before_action :set_basket_item, only: [:show, :edit, :update, :destroy]
 

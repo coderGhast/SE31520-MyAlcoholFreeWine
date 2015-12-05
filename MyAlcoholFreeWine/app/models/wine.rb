@@ -11,6 +11,8 @@ class Wine < ActiveRecord::Base
     text  :price
   end
 
+  attr_accessor :quantity
+
   has_many :basket_items
   before_destroy :ensure_not_referenced_by_any_line_item
 

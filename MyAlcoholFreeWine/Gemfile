@@ -58,3 +58,6 @@ gem 'sunspot_solr'
 # Make making async job calls to the web services
 gem 'sucker_punch'
 gem 'rufus-scheduler'
+
+# Simple Form for forms outside of model
+gem 'simple_form'

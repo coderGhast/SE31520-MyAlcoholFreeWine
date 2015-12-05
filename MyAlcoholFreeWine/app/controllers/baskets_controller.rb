@@ -1,3 +1,5 @@
+# Code based/modified from Agile Web Development with Rails Book by Andreas Schwarz, Dave Thomas,
+# David Heinemeier Hansson, James Duncan Davidson, Justin Gehtland, Leon Breedt, and Mike Clark
 class BasketsController < ApplicationController
   skip_before_action :authorize, only: [:show, :create, :update, :destroy]
   before_action :set_basket, only: [:show, :edit, :update, :destroy]
@@ -71,6 +73,9 @@ class BasketsController < ApplicationController
 
       WebServiceCaller.new.send_wine_order(current_customer, current_basket)
 
+      @basket = Basket.find_by id: session[:basket_id]
+      @basket.destroy
+      session[:basket_id] = nil
       respond_to do |format|
         format.html { redirect_to wines_url,
                                   notice: 'Your order has been placed. Thank you :)' }

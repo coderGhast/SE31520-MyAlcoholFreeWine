@@ -1,18 +1,25 @@
 class WebServiceCaller
-  def update_web_service_wines(web_service_uri)
-      resource = RestClient::Resource.new web_service_uri
 
-      web_server_response = resource.get
+  def update_web_service_wines(web_service_uri, last_request_time)
+    # Make a GET request for the provided web service uri and send a header with the last time we made a request
+    # Since we only want new updates to save ourselves from accessing our DB and going through every item, this
+    # lets the web service deal with which wines to tell us need updating. The first time this is sent, it's blank,
+    # so we hope the web services will return us everything.
+      web_server_response = RestClient.get(web_service_uri, 'LAST_REQUEST_TIME' => last_request_time )
       result = JSON.parse(web_server_response)
-
+      # For each wine from the web service, remove the url it came from, add a product number based on the id from
+      # the web service and then delete it.
       result.each do |web_service_wine|
         web_service_wine.delete('url')
         web_service_wine['product_number'] = web_service_wine['id']
         web_service_wine.delete('id')
 
+        # With this hash of the web service wine, check if we need to update anything or create a new wine.
         wine_needs_update_or_create(web_service_wine)
       end
-      delete_removed_wines(result)
+      unless result.blank?
+        delete_removed_wines(result)
+      end
   end
 
   private def wine_needs_update_or_create(web_service_wine)
