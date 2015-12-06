@@ -8,6 +8,25 @@
     vertical-align: top;
   }
 
+  .wine_information_display{
+    background-color:#eeeeee;
+    width:90%;
+    margin-left:5%;
+  }
+
+  .brief_wine{
+    padding-left:30px;
+    width:30%;
+    .show_image{
+      height:40%;
+      width:40%;
+    }
+  }
+
+  .longer_wine{
+
+  }
+
   .list_image {
     width: 50px;
     height: 70px;

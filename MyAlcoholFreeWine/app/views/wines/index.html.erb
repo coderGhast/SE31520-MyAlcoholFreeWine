@@ -1,13 +1,4 @@
 <p id="notice"><%= notice %></p>
-<p>
-  <%= form_tag wines_search_path, :method => 'get' do %>
-    <p>
-      <%= text_field_tag :search, params[:search] %>
-      <%= submit_tag 'Search', :name => nil %>
-    </p>
-<% end %>
-</p>
-
 <table>
   <% @wines.each do |wine| %>
       <tr class="<%= cycle('list_line_odd', 'list_line_even') %>">

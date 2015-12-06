@@ -6,19 +6,35 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body class='<%= controller.controller_name %>'>
-<h1><%= link_to 'Available, Cheapest Wines', wines_path(page:1) %></h1>
-<% if session[:basket_id] %>
-  <%= button_to 'Basket', basket_path(session[:basket_id]), method: :get %>
-<% end %>
-<% if session[:customer_detail_id] %>
-    <p>Logged in as <%= get_customer_email %></p>
-  <%= button_to 'Logout', logout_path, method: :delete %>
-<% else %>
-  <%= button_to 'Login', login_path, method: :get %>
-  <%= button_to 'Register', new_customer_detail_url, method: :get %>
-<% end %>
-<%= yield %>
+<body>
+<div class="header">
+  <h1><%= link_to 'MyAlcoholFreeWine', wines_path(page:1) %></h1>
+  <div class="customer_buttons">
+    <% if session[:basket_id] %>
+        <%= button_to 'Basket', basket_path(session[:basket_id]), method: :get, :class => "basket_button" %>
+    <% end %>
 
+    <% if session[:customer_detail_id] %>
+        <p class="logged_in_as">Logged in as <%= get_customer_email %></p>
+      <%= button_to 'Logout', logout_path, method: :delete, :class => "logout_button"%>
+    <% else %>
+      <%= button_to 'Login', login_path, method: :get, :class => "login_button" %>
+      <%= button_to 'Register', new_customer_detail_url, method: :get, :class => "register_button" %>
+    <% end %>
+  </div>
+  <p>
+    <%= form_tag wines_search_path, :method => 'get' do %>
+      <p>
+        <%= text_field_tag :search, params[:search] %>
+        <%= submit_tag 'Search', :name => nil %>
+      </p>
+  <% end %>
+  </p>
+</div>
+<div class="main_display">
+  <div class='<%= controller.controller_name %>'>
+    <%= yield %>
+  </div>
+</div>
 </body>
 </html>

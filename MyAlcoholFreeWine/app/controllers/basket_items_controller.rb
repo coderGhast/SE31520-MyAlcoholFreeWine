@@ -64,9 +64,22 @@ class BasketItemsController < ApplicationController
   # DELETE /basket_items/1.json
   def destroy
     @basket_item.destroy
-    respond_to do |format|
-      format.html { redirect_to basket_items_url, notice: 'Basket item was successfully destroyed.' }
-      format.json { head :no_content }
+
+    @basket_items = BasketItem.where basket_id: session[:basket_id]
+    if @basket_items.empty?
+      @basket = Basket.find_by id: session[:basket_id]
+      @basket.destroy
+      session[:basket_id] = nil
+      respond_to do |format|
+        format.html { redirect_to wines_url,
+                                  notice: 'Your basket is currently empty' }
+        format.json { head :no_content }
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to :back, notice: 'Basket item was successfully removed.' }
+        format.json { head :no_content }
+      end
     end
   end
 

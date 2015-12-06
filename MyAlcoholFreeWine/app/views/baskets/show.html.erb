@@ -10,7 +10,13 @@
 
   <td><%= item.wine.name %></td>
   <td>&times;<%= item.quantity %></td>
-  <td class="item_price"><%= number_to_currency(item.total_price, :unit => '£') %></td>
+  <td class="item_price">
+    <%= number_to_currency(item.total_price, :unit => '£') %>
+    <td>
+      <%= button_to 'Remove', item, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'remove_basket_button' %>
+    </td>
+  </td>
+
   </tr>
   <% end %>
   <tr class="total_line">

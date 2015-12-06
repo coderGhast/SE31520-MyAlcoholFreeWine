@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
-
+<table class="wine_information_display">
+  <td class="brief_wine">
 <p>
   <strong>Name:</strong>
   <%= @wine.name %>
@@ -15,6 +16,14 @@
   <%= @wine.description %>
 </p>
 
+
+    <%= button_to 'Add to Basket', basket_items_path(wine_id: @wine.id) %>
+    <%= link_to 'Back', wines_path(page: @current_page) %>
+    <%  if !@last_search.blank? %>
+        <%= link_to 'Back to search results', wines_search_path(page: @current_page, search: @last_search) %>
+    <% end %>
+  </td>
+  <td class="longer_wine">
 <p>
   <strong>Country of origin:</strong>
   <%= @wine.country_of_origin %>
@@ -44,9 +53,6 @@
   <strong>Supplier:</strong>
   <%= @wine.supplier %>
 </p>
+  </td>
+</table>
 
-<%= button_to 'Add to Basket', basket_items_path(wine_id: @wine.id) %>
-<%= link_to 'Back', wines_path(page: @current_page) %>
-<%  if !@last_search.blank? %>
-  <%= link_to 'Back to search results', wines_search_path(page: @current_page, search: @last_search) %>
-<% end %>

@@ -4,6 +4,55 @@ body {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+  padding: 0px;
+  margin: 0px;
+}
+
+.main_display{
+  margin:10px
+}
+
+.header {
+  background-color: #730E15;
+  color: #F7F7F7;
+  height: 80px;
+  padding:5px;
+}
+
+.header h1 {
+  margin: 0px;
+  padding: 10px 0px 0px;
+
+}
+
+.logged_in_as{
+  margin:0px;
+  padding:2px;
+}
+
+.customer_buttons{
+  float:right;
+  margin-top: -15px;
+  margin-right: 20px;
+}
+
+.basket_button{
+}
+
+.logout_button {
+  right:0%;
+}
+
+.login_button{
+  float:left;
+  display:inline-block;
+  margin-right: 75px;
+}
+.register_button{
+  display:inline-block;
+  float:right;
+  margin-top: -21px;
+  margin-right: 5px;
 }
 
 p, ol, ul, td {
