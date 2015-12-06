@@ -41,10 +41,15 @@ class BasketItemsControllerTest < ActionController::TestCase
   end
 
   test "should destroy basket_item" do
+    request.env['HTTP_REFERER'] = baskets_path
     assert_difference('BasketItem.count', -1) do
       delete :destroy, id: @basket_item
     end
+  end
 
-    assert_redirected_to basket_items_path
+  test "should_send_us_back_to_where_we_were_after_destroy_basket_item" do
+    request.env['HTTP_REFERER'] = baskets_path
+    delete :destroy, id: @basket_item
+    assert_redirected_to baskets_path
   end
 end

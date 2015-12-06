@@ -21,13 +21,14 @@
     <SUITE FILE_PATH="coverage/MyAlcoholFreeWine@sessions_controller.coverage" NAME="sessions_controller Coverage Results" MODIFIED="1449277109798" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/controllers" MODULE_NAME="MyAlcoholFreeWine" />
     <SUITE FILE_PATH="coverage/MyAlcoholFreeWine@test_should_update_customer_detail__MyAlcoholFreeWine.coverage" NAME="test_should_update_customer_detail: MyAlcoholFreeWine Coverage Results" MODIFIED="1449275634666" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="MyAlcoholFreeWine" />
     <SUITE FILE_PATH="coverage/MyAlcoholFreeWine@test_should_create_customer_detail__MyAlcoholFreeWine.coverage" NAME="test_should_create_customer_detail: MyAlcoholFreeWine Coverage Results" MODIFIED="1449275050842" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="MyAlcoholFreeWine" />
+    <SUITE FILE_PATH="coverage/MyAlcoholFreeWine@test_should_destroy_basket_item__MyAlcoholFreeWine.coverage" NAME="test_should_destroy_basket_item: MyAlcoholFreeWine Coverage Results" MODIFIED="1449429514993" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="MyAlcoholFreeWine" />
     <SUITE FILE_PATH="coverage/MyAlcoholFreeWine@web_service_caller.coverage" NAME="web_service_caller Coverage Results" MODIFIED="1448728453636" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/models" MODULE_NAME="MyAlcoholFreeWine" />
     <SUITE FILE_PATH="coverage/MyAlcoholFreeWine@test_should_login__MyAlcoholFreeWine.coverage" NAME="test_should_login: MyAlcoholFreeWine Coverage Results" MODIFIED="1449273117015" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="MyAlcoholFreeWine" />
     <SUITE FILE_PATH="coverage/MyAlcoholFreeWine@customer_details_controller.coverage" NAME="customer_details_controller Coverage Results" MODIFIED="1449271634991" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/controllers" MODULE_NAME="MyAlcoholFreeWine" />
     <SUITE FILE_PATH="coverage/MyAlcoholFreeWine@Run_test__SessionsControllerTest___MyAlcoholFreeWine.coverage" NAME="Run test 'SessionsControllerTest': MyAlcoholFreeWine Coverage Results" MODIFIED="1449277127068" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="MyAlcoholFreeWine" />
     <SUITE FILE_PATH="coverage/MyAlcoholFreeWine@Run_test__CustomerDetailsControllerTest___MyAlcoholFreeWine.coverage" NAME="Run test 'CustomerDetailsControllerTest': MyAlcoholFreeWine Coverage Results" MODIFIED="1449276321616" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="MyAlcoholFreeWine" />
     <SUITE FILE_PATH="coverage/MyAlcoholFreeWine@Run_test__WinesControllerTest___MyAlcoholFreeWine.coverage" NAME="Run test 'WinesControllerTest': MyAlcoholFreeWine Coverage Results" MODIFIED="1449277172149" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="MyAlcoholFreeWine" />
-    <SUITE FILE_PATH="coverage/MyAlcoholFreeWine@Run_test__BasketItemsControllerTest___MyAlcoholFreeWine.coverage" NAME="Run test 'BasketItemsControllerTest': MyAlcoholFreeWine Coverage Results" MODIFIED="1449273892508" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="MyAlcoholFreeWine" />
+    <SUITE FILE_PATH="coverage/MyAlcoholFreeWine@Run_test__BasketItemsControllerTest___MyAlcoholFreeWine.coverage" NAME="Run test 'BasketItemsControllerTest': MyAlcoholFreeWine Coverage Results" MODIFIED="1449429597173" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="MyAlcoholFreeWine" />
     <SUITE FILE_PATH="coverage/MyAlcoholFreeWine@Run_test__BasketsControllerTest___MyAlcoholFreeWine.coverage" NAME="Run test 'BasketsControllerTest': MyAlcoholFreeWine Coverage Results" MODIFIED="1449273927310" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="MyAlcoholFreeWine" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -56,11 +57,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="customer_details_controller.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="customer_details_controller.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/customer_details_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5952381">
+            <state vertical-scroll-proportion="0.0">
               <caret line="37" column="124" selection-start-line="37" selection-start-column="124" selection-end-line="37" selection-end-column="124" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="basket_items_controller_test.rb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/controllers/basket_items_controller_test.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.8167116">
+              <caret line="43" column="46" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -118,7 +129,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/test/controllers/basket_items_controller_test.rb" />
         <option value="$PROJECT_DIR$/app/models/basket_item.rb" />
         <option value="$PROJECT_DIR$/app/models/basket.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20151203181420_update_customer_detail.rb" />
@@ -169,6 +179,7 @@
         <option value="$PROJECT_DIR$/db/schema.rb" />
         <option value="$PROJECT_DIR$/app/models/web_service_caller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/customer_details_controller.rb" />
+        <option value="$PROJECT_DIR$/test/controllers/basket_items_controller_test.rb" />
       </list>
     </option>
   </component>
@@ -231,6 +242,38 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="MyAlcoholFreeWine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MyAlcoholFreeWine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MyAlcoholFreeWine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MyAlcoholFreeWine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="MyAlcoholFreeWine" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="test" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -455,48 +498,7 @@
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../WebService1" />
   </component>
-  <component name="RunManager" selected="Rails.Development: MyAlcoholFreeWine">
-    <configuration default="false" name="Run test 'CustomersControllerTest': MyAlcoholFreeWine" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" temporary="true">
-      <predefined_log_file id="RUBY_TESTUNIT" enabled="true" />
-      <module name="MyAlcoholFreeWine" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift) -Itest" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
-      <envs>
-        <env name="RAILS_ENV" value="test" />
-        <env name="JRUBY_OPTS" value="-X+O" />
-      </envs>
-      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
-      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/test/controllers/customers_controller_test.rb" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
-      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
-      <method />
-    </configuration>
-    <configuration default="false" name="sessions_controller" type="RubyRunConfigurationType" factoryName="Ruby" temporary="true">
-      <module name="MyAlcoholFreeWine" />
-      <RUBY_RUN_CONFIG NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift)" />
-      <RUBY_RUN_CONFIG NAME="WORK DIR" VALUE="$MODULE_DIR$/app/controllers" />
-      <RUBY_RUN_CONFIG NAME="SHOULD_USE_SDK" VALUE="false" />
-      <RUBY_RUN_CONFIG NAME="ALTERN_SDK_NAME" VALUE="" />
-      <RUBY_RUN_CONFIG NAME="myPassParentEnvs" VALUE="true" />
-      <envs />
-      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
-      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
-      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov" />
-      <RUBY_RUN_CONFIG NAME="SCRIPT_PATH" VALUE="$MODULE_DIR$/app/controllers/sessions_controller.rb" />
-      <RUBY_RUN_CONFIG NAME="SCRIPT_ARGS" VALUE="" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Test::Unit/Shoulda/Minitest.Run test 'BasketItemsControllerTest': MyAlcoholFreeWine">
     <configuration default="false" name="Run test 'SessionsControllerTest': MyAlcoholFreeWine" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" temporary="true">
       <predefined_log_file id="RUBY_TESTUNIT" enabled="true" />
       <module name="MyAlcoholFreeWine" />
@@ -569,6 +571,58 @@
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="**/{*_test,test_*}.rb" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="ALL_IN_FOLDER" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
+      <method />
+    </configuration>
+    <configuration default="false" name="test_should_destroy_basket_item: MyAlcoholFreeWine" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" temporary="true">
+      <predefined_log_file id="RUBY_TESTUNIT" enabled="true" />
+      <module name="MyAlcoholFreeWine" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift) -Itest" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="RAILS_ENV" value="test" />
+        <env name="JRUBY_OPTS" value="-X+O" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/test/controllers/basket_items_controller_test.rb" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="test_should_destroy_basket_item" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_METHOD" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUNNER_OPTIONS" VALUE="" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Run test 'BasketItemsControllerTest': MyAlcoholFreeWine" type="TestUnitRunConfigurationType" factoryName="Test::Unit/Shoulda/Minitest" temporary="true">
+      <predefined_log_file id="RUBY_TESTUNIT" enabled="true" />
+      <module name="MyAlcoholFreeWine" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="RUBY_ARGS" VALUE="-e $stdout.sync=true;$stderr.sync=true;load($0=ARGV.shift) -Itest" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="WORK DIR" VALUE="$MODULE_DIR$" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SHOULD_USE_SDK" VALUE="false" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ALTERN_SDK_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="myPassParentEnvs" VALUE="true" />
+      <envs>
+        <env name="RAILS_ENV" value="test" />
+        <env name="JRUBY_OPTS" value="-X+O" />
+      </envs>
+      <EXTENSION ID="BundlerRunConfigurationExtension" bundleExecEnabled="true" />
+      <EXTENSION ID="JRubyRunConfigurationExtension" NailgunExecEnabled="false" />
+      <EXTENSION ID="RubyCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" track_test_folders="true" runner="rcov" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TESTS_FOLDER_PATH" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_SCRIPT_PATH" VALUE="$MODULE_DIR$/test/controllers/basket_items_controller_test.rb" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_FILE_MASK" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_METHOD_NAME" VALUE="" />
+      <RTEST_RUN_CONFIG_SETTINGS_ID NAME="TEST_TEST_TYPE" VALUE="TEST_SCRIPT" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="DRB" VALUE="false" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="ZEUS" VALUE="false" />
       <RTEST_RUN_CONFIG_SETTINGS_ID NAME="SPRING" VALUE="false" />
@@ -732,19 +786,19 @@
       <item index="1" class="java.lang.String" itemvalue="Rake.spec: MyAlcoholFreeWine" />
       <item index="2" class="java.lang.String" itemvalue="Rails.Production: MyAlcoholFreeWine" />
       <item index="3" class="java.lang.String" itemvalue="Rails.Development: MyAlcoholFreeWine" />
-      <item index="4" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.Run test 'CustomersControllerTest': MyAlcoholFreeWine" />
-      <item index="5" class="java.lang.String" itemvalue="Ruby.sessions_controller" />
-      <item index="6" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.Run test 'SessionsControllerTest': MyAlcoholFreeWine" />
-      <item index="7" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.Run test 'WinesControllerTest': MyAlcoholFreeWine" />
-      <item index="8" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.All tests in test: MyAlcoholFreeWine" />
+      <item index="4" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.Run test 'SessionsControllerTest': MyAlcoholFreeWine" />
+      <item index="5" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.Run test 'WinesControllerTest': MyAlcoholFreeWine" />
+      <item index="6" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.All tests in test: MyAlcoholFreeWine" />
+      <item index="7" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.test_should_destroy_basket_item: MyAlcoholFreeWine" />
+      <item index="8" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.Run test 'BasketItemsControllerTest': MyAlcoholFreeWine" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.All tests in test: MyAlcoholFreeWine" />
-        <item index="1" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.Run test 'WinesControllerTest': MyAlcoholFreeWine" />
-        <item index="2" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.Run test 'SessionsControllerTest': MyAlcoholFreeWine" />
-        <item index="3" class="java.lang.String" itemvalue="Ruby.sessions_controller" />
-        <item index="4" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.Run test 'CustomersControllerTest': MyAlcoholFreeWine" />
+        <item index="0" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.Run test 'BasketItemsControllerTest': MyAlcoholFreeWine" />
+        <item index="1" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.test_should_destroy_basket_item: MyAlcoholFreeWine" />
+        <item index="2" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.All tests in test: MyAlcoholFreeWine" />
+        <item index="3" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.Run test 'WinesControllerTest': MyAlcoholFreeWine" />
+        <item index="4" class="java.lang.String" itemvalue="Test::Unit/Shoulda/Minitest.Run test 'SessionsControllerTest': MyAlcoholFreeWine" />
       </list>
     </recent_temporary>
   </component>
@@ -762,20 +816,11 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="All_tests_in_test__MyAlcoholFreeWine - 2015.12.05 at 01h 00m 07s.xml">
-      <configuration name="All tests in test: MyAlcoholFreeWine" configurationId="TestUnitRunConfigurationType" />
+    <history-entry file="Run_test__BasketItemsControllerTest___MyAlcoholFreeWine - 2015.12.06 at 19h 19m 43s.xml">
+      <configuration name="Run test 'BasketItemsControllerTest': MyAlcoholFreeWine" configurationId="TestUnitRunConfigurationType" />
     </history-entry>
-    <history-entry file="Run_test__CustomersControllerTest___MyAlcoholFreeWine - 2015.12.05 at 00h 48m 43s.xml">
-      <configuration name="Run test 'CustomersControllerTest': MyAlcoholFreeWine" configurationId="TestUnitRunConfigurationType" />
-    </history-entry>
-    <history-entry file="Run_test__CustomersControllerTest___MyAlcoholFreeWine - 2015.12.05 at 00h 50m 44s.xml">
-      <configuration name="Run test 'CustomersControllerTest': MyAlcoholFreeWine" configurationId="TestUnitRunConfigurationType" />
-    </history-entry>
-    <history-entry file="Run_test__CustomersControllerTest___MyAlcoholFreeWine - 2015.12.05 at 00h 51m 47s.xml">
-      <configuration name="Run test 'CustomersControllerTest': MyAlcoholFreeWine" configurationId="TestUnitRunConfigurationType" />
-    </history-entry>
-    <history-entry file="Run_test__CustomersControllerTest___MyAlcoholFreeWine - 2015.12.05 at 00h 53m 04s.xml">
-      <configuration name="Run test 'CustomersControllerTest': MyAlcoholFreeWine" configurationId="TestUnitRunConfigurationType" />
+    <history-entry file="Run_test__BasketItemsControllerTest___MyAlcoholFreeWine - 2015.12.06 at 19h 20m 07s.xml">
+      <configuration name="Run test 'BasketItemsControllerTest': MyAlcoholFreeWine" configurationId="TestUnitRunConfigurationType" />
     </history-entry>
     <history-entry file="Run_test__CustomersControllerTest___MyAlcoholFreeWine - 2015.12.05 at 00h 54m 42s.xml">
       <configuration name="Run test 'CustomersControllerTest': MyAlcoholFreeWine" configurationId="TestUnitRunConfigurationType" />
@@ -792,6 +837,15 @@
     <history-entry file="test_should_create_customer__MyAlcoholFreeWine - 2015.12.05 at 00h 56m 37s.xml">
       <configuration name="test_should_create_customer: MyAlcoholFreeWine" configurationId="TestUnitRunConfigurationType" />
     </history-entry>
+    <history-entry file="test_should_destroy_basket_item__MyAlcoholFreeWine - 2015.12.06 at 19h 16m 24s.xml">
+      <configuration name="test_should_destroy_basket_item: MyAlcoholFreeWine" configurationId="TestUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="test_should_destroy_basket_item__MyAlcoholFreeWine - 2015.12.06 at 19h 17m 57s.xml">
+      <configuration name="test_should_destroy_basket_item: MyAlcoholFreeWine" configurationId="TestUnitRunConfigurationType" />
+    </history-entry>
+    <history-entry file="test_should_destroy_basket_item__MyAlcoholFreeWine - 2015.12.06 at 19h 18m 45s.xml">
+      <configuration name="test_should_destroy_basket_item: MyAlcoholFreeWine" configurationId="TestUnitRunConfigurationType" />
+    </history-entry>
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -802,9 +856,9 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36263737" sideWeight="0.5151286" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32980332" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36263737" sideWeight="0.48487142" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.36263737" sideWeight="0.48487142" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37362638" sideWeight="0.49092284" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.37362638" sideWeight="0.49092284" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3987441" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -840,13 +894,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/test/controllers/baskets_controller_test.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.5121294">
-          <caret line="2" column="26" selection-start-line="2" selection-start-column="26" selection-end-line="2" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://C:/RailsInstaller/Ruby2.1.0/lib/ruby/gems/2.1.0/gems/activesupport-4.2.4/lib/active_support/core_ext/object/to_query.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -865,6 +912,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="66" column="0" selection-start-line="66" selection-start-column="0" selection-end-line="66" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1222,8 +1270,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/customer_details_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5952381">
+        <state vertical-scroll-proportion="0.0">
           <caret line="37" column="124" selection-start-line="37" selection-start-column="124" selection-end-line="37" selection-end-column="124" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/controllers/basket_items_controller_test.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8167116">
+          <caret line="43" column="46" selection-start-line="43" selection-start-column="46" selection-end-line="43" selection-end-column="46" />
           <folding />
         </state>
       </provider>
