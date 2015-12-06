@@ -35,7 +35,7 @@ class CustomerDetailsController < ApplicationController
     respond_to do |format|
       if @customer_detail.save
         format.html { redirect_to wines_url,
-                                  notice: "User #{@customer_detail.email} was successfully created." }
+                                  notice: "User #{@customer_detail.email} was successfully created. Please proceed to Login." }
         format.json { render :show, status: :created, location: @customer_detail }
       else
         format.html { render :new }

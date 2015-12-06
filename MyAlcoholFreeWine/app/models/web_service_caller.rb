@@ -19,7 +19,10 @@ class WebServiceCaller
         wine_needs_update_or_create(web_service_wine)
       end
       unless result.blank?
-        delete_removed_wines(result)
+        # This feature did delete any wines not sent to us, but since I changed the code to now only be sent wines that
+        # have been updated, it would just delete every wine except those updated. What should instead be done is to
+        # use a flag for STATUS on each wine, to say if it's in stock, out of stock or discontinued.
+        #delete_removed_wines(result)
       end
     rescue
 # ignored
