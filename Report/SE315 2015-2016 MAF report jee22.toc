@@ -12,8 +12,8 @@
 \contentsline {subsubsection}{Design}{4}{section*.14}
 \contentsline {subsubsection}{Implementation: MAF}{4}{section*.15}
 \contentsline {subsubsection}{Implementation: Web Service}{4}{section*.16}
-\contentsline {subsubsection}{Testing}{4}{section*.17}
-\contentsline {subsubsection}{Evaluation}{4}{section*.18}
+\contentsline {subsubsection}{Testing}{5}{section*.17}
+\contentsline {subsubsection}{Evaluation}{5}{section*.18}
 \contentsline {subsubsection}{Flair}{5}{section*.19}
 \contentsline {subsubsection}{Total}{5}{section*.20}
 \contentsline {subsection}{Summary}{5}{section*.21}
