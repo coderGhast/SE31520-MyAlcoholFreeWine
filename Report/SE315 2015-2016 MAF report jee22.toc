@@ -1,0 +1,19 @@
+\contentsline {section}{Introduction}{3}{section*.2}
+\contentsline {section}{MAF Architecture}{3}{section*.3}
+\contentsline {subsection}{Design}{3}{section*.4}
+\contentsline {subsection}{MVC}{3}{section*.6}
+\contentsline {section}{Web Service Architecure}{3}{section*.7}
+\contentsline {section}{Test Strategy}{4}{section*.8}
+\contentsline {subsection}{System Testing}{4}{section*.9}
+\contentsline {subsection}{Unit Test for models and controllers}{4}{section*.10}
+\contentsline {section}{Self-Evaluation}{4}{section*.11}
+\contentsline {subsection}{Mark Breakdown}{4}{section*.12}
+\contentsline {subsubsection}{Screencast}{4}{section*.13}
+\contentsline {subsubsection}{Design}{4}{section*.14}
+\contentsline {subsubsection}{Implementation: MAF}{4}{section*.15}
+\contentsline {subsubsection}{Implementation: Web Service}{4}{section*.16}
+\contentsline {subsubsection}{Testing}{4}{section*.17}
+\contentsline {subsubsection}{Evaluation}{4}{section*.18}
+\contentsline {subsubsection}{Flair}{5}{section*.19}
+\contentsline {subsubsection}{Total}{5}{section*.20}
+\contentsline {subsection}{Summary}{5}{section*.21}
