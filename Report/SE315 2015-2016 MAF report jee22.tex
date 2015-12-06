@@ -315,7 +315,7 @@ There are examples of the functional requirements laid about by the System Test 
 
 \begin{figure}[H]
         \centering
-                \includegraphics[width=1\textwidth]{assets/FR3_screen}
+                \includegraphics[width=0.5\textwidth]{assets/FR3_screen}
                 \caption{FR3 - Displaying the full info for a Wine, FR4 allowing the Wine to be added to the Basket.}
                 \label{fig: FR3_1.} 
 \end{figure}
@@ -345,37 +345,70 @@ There are examples of the functional requirements laid about by the System Test 
 \end{figure}
 
 \begin{figure}[H]
-        \centering
-                \includegraphics[width=1\textwidth]{assets/FR6_screen1}
+     
+                \includegraphics[width=0.5\textwidth]{assets/FR6_screen1}
                 \caption{FR6 - Checking out.}
                 \label{fig: FR6_1.} 
 \end{figure}
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}[b]{0.3\textwidth}
-        \includegraphics[width=\textwidth]{assets/FR5_screen_1}
-        \caption{Viewing the Basket with items}
-        \label{fig:FR5 view Basket}
+    \begin{subfigure}[b]{0.4\textwidth}
+        \includegraphics[width=\textwidth]{assets/FR7_screen_1}
+        \caption{The login form}
+        \label{fig:FR7 Login}
     \end{subfigure}
     ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
       %(or a blank line to force the subfigure onto a new line)
-    \begin{subfigure}[b]{0.3\textwidth}
-        \includegraphics[width=\textwidth]{assets/FR5_screen_2}
-        \caption{Remove item from Basket}
-        \label{fig:FR5 Remove item from Basket}
+    \begin{subfigure}[b]{0.4\textwidth}
+        \includegraphics[width=\textwidth]{assets/FR7_screen_2}
+        \caption{Informing the Customer that they have Logged out}
+        \label{fig:FR7 Logout}
     \end{subfigure}
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-    %(or a blank line to force the subfigure onto a new line)
-    \begin{subfigure}[b]{0.3\textwidth}
-        \includegraphics[width=\textwidth]{assets/FR5_screen_3}
-        \caption{Emptying the Basket}
-        \label{fig:FR5 empty basket}
-    \end{subfigure}
-    \caption{FR5: Interacting with the Basket}\label{fig:FR5 Basket}
+    \caption{FR7: Customer account actions}\label{fig:FR7 Customer Account 1}
+\end{figure}
+
+\begin{figure}[H]
+        \centering
+                \includegraphics[width=0.5\textwidth]{assets/FR7_screen_5}
+                \caption{FR7 - Registering an account.}
+                \label{fig: FR7 register.} 
 \end{figure}
 
 
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.4\textwidth}
+        \includegraphics[width=\textwidth]{assets/FR7_screen_3}
+        \caption{With invalid email/password}
+        \label{fig:FR7 Bad data}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+    %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.4\textwidth}
+        \includegraphics[width=\textwidth]{assets/FR7_screen_6}
+        \caption{Successfully creating a customer account}
+        \label{fig:FR7 Duplicate email}
+    \end{subfigure}
+    \caption{FR7: Customer account actions}\label{fig:FR7 Customer Account 2}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.5\textwidth}
+        \includegraphics[width=\textwidth]{assets/FR7_screen_7}
+        \caption{Attempting to create a new account with an already existing email}
+        \label{fig:FR7 Duplicate}
+    \end{subfigure}
+    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
+    %(or a blank line to force the subfigure onto a new line)
+    \begin{subfigure}[b]{0.5\textwidth}
+        \includegraphics[width=\textwidth]{assets/FR7_screen_8}
+        \caption{Attempting to create an account with missing data}
+        \label{fig:FR7 Missing data}
+    \end{subfigure}
+    \caption{FR7: Customer account actions}\label{fig:FR7 Customer Account 3}
+\end{figure}
 
 \subsection{Unit Test for models and controllers}
 For testing the innards of my application, I used Rails unit testing for my models and controllers. Some of the generated tests by Rails were no longer required, as I didn't need actions for things such as New for Wines, as they are added into the database by the WebServiceCaller and not required to be added manually in MAF.
