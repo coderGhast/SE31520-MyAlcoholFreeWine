@@ -1,3 +1,6 @@
+# Code based/modified from Agile Web Development with Rails Book by Andreas Schwarz, Dave Thomas,
+# David Heinemeier Hansson, James Duncan Davidson, Justin Gehtland, Leon Breedt, and Mike Clark
+
 class Basket < ActiveRecord::Base
   has_many :basket_items, dependent: :destroy
 
