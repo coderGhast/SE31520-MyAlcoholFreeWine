@@ -3,6 +3,6 @@ require 'rufus-scheduler'
 
 scheduler = Rufus::Scheduler::singleton
 
-scheduler.every '60s' do
+scheduler.every '30s' do
  WebServiceCallJob.new.async.perform
 end
