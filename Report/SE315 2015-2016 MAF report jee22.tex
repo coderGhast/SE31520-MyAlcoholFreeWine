@@ -278,9 +278,13 @@ When it comes to receiving Orders, the Web Service receives a body of JSON that 
 
 \section{Test Strategy}
 \subsection{System Testing}
-My main focus for testing my system was the System Test Table. I wanted to be sure that my system met all of the functional requirements. I wrote my system test table and gradually went through them one by one to ensure my system passed them. Some of the tests I added but were slightly out of scope for this prototype, but I wished to include them as stretch goals.
+I helped myself focus on implementing the functional requirements through using a system test table, indicating what the system should be like and how it should respond based on assumptions the functional requirements. I wrote my system test table and gradually went through them one by one to ensure my system passed them. I added some tests to the table that were out of scope of the application but that I thought would be good inclusions into it.
+
+The majority of my system tests passed, and completing each functional requirement and fulfilling each system test was pretty satisfying. If this system were more than a prototype, I'd advance on these system tests much further. My System Test Table can be seen below.
+
 \includepdf[pages=-]{assets/MAF_System_Test_Table.pdf}
-There are examples of the functional requirements laid about by the System Test Table shown below.
+
+In order to back up my system test table, along with the screen cast provided with the application and this report, I have included some screenshots of the application in various stages of the system tests. Not all tests have been included in the screenshots, and some tests are difficult to give examples for through screenshots alone.
 
 \begin{figure}[H]
         \centering
@@ -288,6 +292,7 @@ There are examples of the functional requirements laid about by the System Test 
                 \caption{FR1 - Displaying a list of cheapest Wines.}
                 \label{fig: FR1_1.} 
 \end{figure}
+The system presents the user with a number of Wines, provided by the Web Services. If a Wine in a Web Service updates, we can see the change reflected here. Through testing this requirement I was able to see when the bug of all wines except those recently updated were deleted appeared and fix it.
 
 \begin{figure}[H]
     \centering
@@ -369,14 +374,6 @@ There are examples of the functional requirements laid about by the System Test 
 \end{figure}
 
 \begin{figure}[H]
-        \centering
-                \includegraphics[width=0.5\textwidth]{assets/FR7_screen_5}
-                \caption{FR7 - Registering an account.}
-                \label{fig: FR7 register.} 
-\end{figure}
-
-
-\begin{figure}[H]
     \centering
     \begin{subfigure}[b]{0.4\textwidth}
         \includegraphics[width=\textwidth]{assets/FR7_screen_3}
@@ -395,20 +392,22 @@ There are examples of the functional requirements laid about by the System Test 
 
 \begin{figure}[H]
     \centering
-    \begin{subfigure}[b]{0.5\textwidth}
+    \begin{subfigure}[b]{0.4\textwidth}
         \includegraphics[width=\textwidth]{assets/FR7_screen_7}
         \caption{Attempting to create a new account with an already existing email}
         \label{fig:FR7 Duplicate}
     \end{subfigure}
     ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
     %(or a blank line to force the subfigure onto a new line)
-    \begin{subfigure}[b]{0.5\textwidth}
+    \begin{subfigure}[b]{0.4\textwidth}
         \includegraphics[width=\textwidth]{assets/FR7_screen_8}
         \caption{Attempting to create an account with missing data}
         \label{fig:FR7 Missing data}
     \end{subfigure}
     \caption{FR7: Customer account actions}\label{fig:FR7 Customer Account 3}
 \end{figure}
+
+There are a number more system tests that could be done, and if this were a full project I would have system tests for every route that could be accessed, add security to the customer sessions, potentially use Selenium for automating tests of browsing the web site as a user to see what happened under certain conditions and more. As the majority of the conditions laid out in my functional requirements systems test table pass, I am pleased with these results. However, if given more time I would like to look into other ways of testing the system to be sure that it was as foolproof as possible.
 
 \subsection{Unit Test for models and controllers}
 For testing the innards of my application, I used Rails unit testing for my models and controllers. Some of the generated tests by Rails were no longer required, as I didn't need actions for things such as New for Wines, as they are added into the database by the WebServiceCaller and not required to be added manually in MAF.
@@ -429,42 +428,52 @@ My unit tests for the models are mainly checking the validation, that no entitie
 %----------------------------------------------------------------------------------------
 
 \section{Self-Evaluation}
-\subsection{Mark Breakdown}
-\subsubsection{Screen cast}
-Showed 2 Web Service Suppliers running, showed MAF running with all functionality discussed in this report. Expanded on this to show tests passing, Search in depth, etc Showed orders being received by the web suppliers
-Mark: /10\%
-
-\subsubsection{Design}
-Design diagrams for both how I expected MVC to look and also for my database ideas, along with improvements. Explanation for my designs present and meeting the requirements, backed up through screen cast. Documentation quality is okay, could be more in-depth, and design could be improved, but I'm new to Rails and need more experience.
-Mark: /20\%
-
-\subsubsection{Implementation: MAF}
-Application runs, and meets the requirements (except quantity indicator when adding to basket). Rails controllers make calls to models, and views receive the data from the controllers in order to display it. Code is commented, attributions to code where used and identifier names speak for themselves.
-Mark: /25\%
-
-\subsubsection{Implementation: Web Service}
-Web Services run, code has comments and names are good. RESTful resources, wines and orders, can call them and the routing sends the request to the controller through the type of request.
-Mark: /15\%
-
-\subsubsection{Testing}
-Unit tests for each controller, more than just the ones generated by rails, and tests for the models, validations and own methods too. System test table matches assumed customer expectations. Results are discussed and based on these what could be taken forward if this prototype were to be fully implemented
-Mark: /15\%
-
-\subsubsection{Evaluation}
-Full evaluation of report, MAF and web service, with summary of evaluation below the mark breakdown, with what was learned, difficult and easy.
-Mark: /5\%
-
-\subsubsection{Flair}
-Implementation of Search using Solr with Sunspot to search partial words from all sections, editing the schema to change the gram of the search. Calling the WebService asynchronously with SuckerPunch, scheduling it to update with rufus-scheduler for hands off updating without interrupting the customer as they browse the website. Only retrieving the latest updates to wines to cut costs on database operations.
-Mark: /10\%
-
-\subsubsection{Total}
-Mark: /100\%
 
 \subsection{Summary}
-I think I met all of the functional requirements as requested, and the resources as RESTful and data is represented in the Rails way. I know there are areas for improvement (security, clean up, persistent sessions and baskets, better tests, cucumber tests, etc), but as far as the time allowed, my understanding and learning of Rails and this assignment tasking me to just create a prototype, I am happy with the resulting program, and happy I could learn more about Rails and Ruby, how to implement an MVC pattern, talking between web services and even implement external features, like learning configurations of Solr for my search.
+Overall, I'm relatively happy with the result of this assignment. While I don't have full confidence that everything I have done and my design decisions are correct, I feel like I've learned a large amount. Before the assignment I wasn't comfortable writing a Ruby on Rails app at all, and not too sure on routing and communication between web applications either. Now I feel happy enough that I could attempt to write more Rails apps and have enough experience to get going by myself, but still have much more to learn.
 
-I found the most difficult part to be implementing routing, and getting my links in the views to execute the correct controller actions as I wanted (for the more complex tasks, such as removing the last item from a basket, logging in and sending the webservice order). Before this assignment I had little working knowledge of rails outside of the workshops and a small amount of experience with routing, and doing this assignment helped me get my head around routing and how it works, and has helped me feel comfortable going forward in the future to building more Rails apps when I want to make a web application. 
+I know there are areas for improvement (security, clean up, persistent sessions and baskets, better tests, cucumber tests, etc), but as far as the time allowed, my understanding and learning of Rails and this assignment tasking me to just create a prototype, I am happy with the resulting program. I appreciated the help and starting point of the Agile Web Development with Rails\cite{railsbook} book, and think if I were to re-implement this application with better knowledge, I would still use many ideas from this book to begin with and build upon them just as I have done for this.
+
+During implementation, I found the most difficult part to be implementing routing, and getting my links in the views to execute the correct controller actions as I wanted (for the more complex tasks, such as removing the last item from a basket, logging in and sending the webservice order). Before this assignment I had little working knowledge of rails outside of the workshops and a small amount of experience with routing, and doing this assignment helped me get my head around routing and how it works. With little knowledge of Rails, it was difficult to get started, but once I got into the flow of development and started to understand more how Ruby on Rails works, it became much easier and more enjoyable. 
+
+\subsection{Mark Breakdown}
+\subsubsection{Screen cast}
+My screen cast shows my MAF fulfilling the functional requirements set out by the assignment, and two Web Services running with separate data and MAF communicating with them.
+\newline
+Mark: 9/10\%
+
+\subsubsection{Design}
+My sections for the architecture of MAF and the Web Service both display diagrams for my classes (MVC) and there is a diagram to show the relationships between my tables in the database for MAF. I have described the way in which my application works and why I chose certain ways of implementation. My Rails knowledge is not fantastic, but I did the best I could with what I know to design a system in the `Rails way' and use MVC appropriately to design a system that would fulfill the requirements.
+\newline
+Mark: 17/20\%
+
+\subsubsection{Implementation: MAF}
+My MAF application runs, using Rails the architecture for MVC and communicates with the Web Services. The code is commented where appropriate, identifier names make sense for what they represent and adheres to DRY. Data manipulation is handled in the Models, Views stray away from logic code and Controllers are thin, getting data from model methods and enabling the views to display it as necessary.
+\newline
+Mark: 23/25\%
+
+\subsubsection{Implementation: Web Service}
+One Web Service application was built, with two instances of it able to be run, with different data sets. The resources for the Web Service are RESTful and requested are correctly routed to GET and POST requests where appropriate (wines, orders). The Web Service only returns those items that have been updated since the MAF last called to improve efficiency of sending data.
+\newline
+Mark: 15/15\%
+
+\subsubsection{Testing}
+There are unit tests for each controller, and more than just the ones generated by rails, and unit tests for the models where appropriate for the validations and logic methods. There is a system test table that matches my assumed customer expectations. I have discussed the results and how I used the system test table to work through the functional requirements. There are, however, no cucumber tests and testing could cover more areas.
+\newline
+Mark: 10/15\%
+
+\subsubsection{Evaluation}
+I have indicated the results I believe I would receive for each section defined by the marking grid and why. I have a summary of my evaluation to discuss what I found challenging or easy about the assignment, and what I learned through doing it.
+\newline
+Mark: 5/5\%
+
+\subsubsection{Flair}
+Some flair through my implementation of Search using Solr with Sunspot to search partial words from all sections, editing the schema to change the gram of the search, calling the WebService asynchronously with SuckerPunch, scheduling it to update with rufus-scheduler and only retrieving the latest updates to wines to cut costs on database operations. Could be more, i.e. deployment to Heroku, better CSS design with Bootstrap and more user controls.
+\newline
+Mark: 5/10\%
+
+\subsubsection{Total}
+Mark: 84/100\%
 
 
 

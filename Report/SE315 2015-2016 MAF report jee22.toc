@@ -3,15 +3,15 @@
 \contentsline {section}{Web Service Architecture}{6}{section*.6}
 \contentsline {section}{Test Strategy}{8}{section*.8}
 \contentsline {subsection}{System Testing}{8}{section*.9}
-\contentsline {subsection}{Unit Test for models and controllers}{15}{section*.19}
-\contentsline {section}{Self-Evaluation}{16}{section*.21}
+\contentsline {subsection}{Unit Test for models and controllers}{14}{section*.18}
+\contentsline {section}{Self-Evaluation}{15}{section*.20}
+\contentsline {subsection}{Summary}{15}{section*.21}
 \contentsline {subsection}{Mark Breakdown}{16}{section*.22}
 \contentsline {subsubsection}{Screen cast}{16}{section*.23}
 \contentsline {subsubsection}{Design}{16}{section*.24}
 \contentsline {subsubsection}{Implementation: MAF}{16}{section*.25}
-\contentsline {subsubsection}{Implementation: Web Service}{17}{section*.26}
-\contentsline {subsubsection}{Testing}{17}{section*.27}
+\contentsline {subsubsection}{Implementation: Web Service}{16}{section*.26}
+\contentsline {subsubsection}{Testing}{16}{section*.27}
 \contentsline {subsubsection}{Evaluation}{17}{section*.28}
 \contentsline {subsubsection}{Flair}{17}{section*.29}
 \contentsline {subsubsection}{Total}{17}{section*.30}
-\contentsline {subsection}{Summary}{17}{section*.31}
