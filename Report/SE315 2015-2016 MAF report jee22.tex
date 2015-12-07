@@ -224,12 +224,16 @@ I chose to keep the Supplier name as a field in the Wine entity, and the connect
 
 Based on what I expected to need, I made the target class design diagram that can be seen below. This shows the connections between the requests to MAF controllers and what the controllers connect to for their data and showing it.
 
+\vspace*{\fill}
 \begin{figure}[H]
         \centering
-                \includegraphics[width=0.8\textwidth]{assets/MAF_Target_Class_Design}
+\noindent\makebox[\textwidth]{\includegraphics[width=1.2\textwidth]{assets/MAF_Target_Class_Design}}%
+                %%\includegraphics[width=1\textwidth]{assets/MAF_Target_Class_Design}
                 \caption{The intended design of the classes and their connections in the MVC pattern.}
                 \label{fig: Target Class Diagram.} 
 \end{figure}
+
+
 
 You can see that the SessionsController interacts with the Basket and CustomerDetail model, in order to keep the customer logged in with a persistent basket while they browse.
 
@@ -324,40 +328,9 @@ The system presents the user with a number of Wines, provided by the Web Service
 
 \begin{figure}[H]
         \centering
-                \includegraphics[width=0.5\textwidth]{assets/FR3_screen}
+                \includegraphics[width=0.7\textwidth]{assets/FR3_screen}
                 \caption{FR3 - Displaying the full info for a Wine, FR4 allowing the Wine to be added to the Basket.}
                 \label{fig: FR3_1.} 
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}[b]{0.3\textwidth}
-        \includegraphics[width=\textwidth]{assets/FR5_screen_1}
-        \caption{Viewing the Basket with items}
-        \label{fig:FR5 view Basket}
-    \end{subfigure}
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-      %(or a blank line to force the subfigure onto a new line)
-    \begin{subfigure}[b]{0.3\textwidth}
-        \includegraphics[width=\textwidth]{assets/FR5_screen_2}
-        \caption{Remove item from Basket}
-        \label{fig:FR5 Remove item from Basket}
-    \end{subfigure}
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-    %(or a blank line to force the subfigure onto a new line)
-    \begin{subfigure}[b]{0.3\textwidth}
-        \includegraphics[width=\textwidth]{assets/FR5_screen_3}
-        \caption{Emptying the Basket}
-        \label{fig:FR5 empty basket}
-    \end{subfigure}
-    \caption{FR5: Interacting with the Basket}\label{fig:FR5 Basket}
-\end{figure}
-
-\begin{figure}[H]
-     
-                \includegraphics[width=0.5\textwidth]{assets/FR6_screen1}
-                \caption{FR6 - Checking out.}
-                \label{fig: FR6_1.} 
 \end{figure}
 
 \begin{figure}[H]
@@ -392,23 +365,6 @@ The system presents the user with a number of Wines, provided by the Web Service
         \label{fig:FR7 Duplicate email}
     \end{subfigure}
     \caption{FR7: Customer account actions}\label{fig:FR7 Customer Account 2}
-\end{figure}
-
-\begin{figure}[H]
-    \centering
-    \begin{subfigure}[b]{0.4\textwidth}
-        \includegraphics[width=\textwidth]{assets/FR7_screen_7}
-        \caption{Attempting to create a new account with an already existing email}
-        \label{fig:FR7 Duplicate}
-    \end{subfigure}
-    ~ %add desired spacing between images, e. g. ~, \quad, \qquad, \hfill etc. 
-    %(or a blank line to force the subfigure onto a new line)
-    \begin{subfigure}[b]{0.4\textwidth}
-        \includegraphics[width=\textwidth]{assets/FR7_screen_8}
-        \caption{Attempting to create an account with missing data}
-        \label{fig:FR7 Missing data}
-    \end{subfigure}
-    \caption{FR7: Customer account actions}\label{fig:FR7 Customer Account 3}
 \end{figure}
 
 There are a number more system tests that could be done, and if this were a full project I would have system tests for every route that could be accessed, add security to the customer sessions, potentially use Selenium for automating tests of browsing the web site as a user to see what happened under certain conditions and more. As the majority of the conditions laid out in my functional requirements systems test table pass, I am pleased with these results. However, if given more time I would like to look into other ways of testing the system to be sure that it was as foolproof as possible.
