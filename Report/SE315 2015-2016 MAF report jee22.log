@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2013.11.17)  7 DEC 2015 01:13
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2013.11.17)  7 DEC 2015 02:08
 entering extended mode
 **SE315*2015-2016*MAF*report*jee22.tex
 
@@ -1072,7 +1072,14 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  We now make it that large for the rest of the document.
  This may cause the page layout to be inconsistent, however.
 
-[3]
+[3] <assets/MAF_Target_Class_Design.png, id=118, 717.27975pt x 587.64543pt>
+File: assets/MAF_Target_Class_Design.png Graphic file (type png)
+
+<use assets/MAF_Target_Class_Design.png>
+Package pdftex.def Info: assets/MAF_Target_Class_Design.png used on input line 
+230.
+(pdftex.def)             Requested size: 563.70454pt x 461.84067pt.
+
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -1081,14 +1088,6 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [4 <D:/Users/James/University Documents/Modules/SE315/Assignment/SE31520-MyAlco
 holFreeWine/Report/assets/MAF_Database_relationships.png>]
-<assets/MAF_Target_Class_Design.png, id=124, 717.27975pt x 587.64543pt>
-File: assets/MAF_Target_Class_Design.png Graphic file (type png)
-
-<use assets/MAF_Target_Class_Design.png>
-Package pdftex.def Info: assets/MAF_Target_Class_Design.png used on input line 
-230.
-(pdftex.def)             Requested size: 563.70454pt x 461.84067pt.
-
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
  Make it at least 14.49998pt.
@@ -1104,7 +1103,7 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [6]
-<assets/Supplier_Web_Service_Target_Class_Design.png, id=148, 406.51875pt x 280
+<assets/Supplier_Web_Service_Target_Class_Design.png, id=150, 406.51875pt x 280
 .04625pt>
 File: assets/Supplier_Web_Service_Target_Class_Design.png Graphic file (type pn
 g)
@@ -1123,17 +1122,17 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 
 [7 <D:/Users/James/University Documents/Modules/SE315/Assignment/SE31520-MyAlco
 holFreeWine/Report/assets/Supplier_Web_Service_Target_Class_Design.png>]
-<assets/MAF_System_Test_Table.pdf, id=158, 597.23125pt x 845.1575pt>
+<assets/MAF_System_Test_Table.pdf, id=160, 597.23125pt x 845.1575pt>
 File: assets/MAF_System_Test_Table.pdf Graphic file (type pdf)
 
 <use assets/MAF_System_Test_Table.pdf>
 Package pdftex.def Info: assets/MAF_System_Test_Table.pdf used on input line 29
-3.
+1.
 (pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
 File: assets/MAF_System_Test_Table.pdf Graphic file (type pdf)
  <use assets/MAF_System_Test_Table.pdf>
 Package pdftex.def Info: assets/MAF_System_Test_Table.pdf used on input line 29
-3.
+1.
 (pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
 
 
@@ -1143,97 +1142,97 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [8]
-<assets/MAF_System_Test_Table.pdf, id=166, page=1, 597.23125pt x 845.1575pt>
+<assets/MAF_System_Test_Table.pdf, id=168, page=1, 597.23125pt x 845.1575pt>
 File: assets/MAF_System_Test_Table.pdf Graphic file (type pdf)
 
 <use assets/MAF_System_Test_Table.pdf, page 1>
 Package pdftex.def Info: assets/MAF_System_Test_Table.pdf, page1 used on input 
-line 293.
+line 291.
 (pdftex.def)             Requested size: 597.22978pt x 845.15544pt.
 File: assets/MAF_System_Test_Table.pdf Graphic file (type pdf)
 
 <use assets/MAF_System_Test_Table.pdf, page 1>
 Package pdftex.def Info: assets/MAF_System_Test_Table.pdf, page1 used on input 
-line 293.
+line 291.
 (pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
 File: assets/MAF_System_Test_Table.pdf Graphic file (type pdf)
 
 <use assets/MAF_System_Test_Table.pdf, page 1>
 Package pdftex.def Info: assets/MAF_System_Test_Table.pdf, page1 used on input 
-line 293.
+line 291.
 (pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
 File: assets/MAF_System_Test_Table.pdf Graphic file (type pdf)
 
 <use assets/MAF_System_Test_Table.pdf, page 1>
 Package pdftex.def Info: assets/MAF_System_Test_Table.pdf, page1 used on input 
-line 293.
+line 291.
 (pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
 File: assets/MAF_System_Test_Table.pdf Graphic file (type pdf)
 
 <use assets/MAF_System_Test_Table.pdf, page 1>
 Package pdftex.def Info: assets/MAF_System_Test_Table.pdf, page1 used on input 
-line 293.
+line 291.
 (pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
  [9 <D:/Users/James/University Documents/Modules/SE315/Assignment/SE31520-MyAlc
 oholFreeWine/Report/assets/MAF_System_Test_Table.pdf>]
-<assets/MAF_System_Test_Table.pdf, id=187, page=2, 597.23125pt x 845.1575pt>
+<assets/MAF_System_Test_Table.pdf, id=189, page=2, 597.23125pt x 845.1575pt>
 File: assets/MAF_System_Test_Table.pdf Graphic file (type pdf)
 
 <use assets/MAF_System_Test_Table.pdf, page 2>
 Package pdftex.def Info: assets/MAF_System_Test_Table.pdf, page2 used on input 
-line 293.
+line 291.
 (pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
 File: assets/MAF_System_Test_Table.pdf Graphic file (type pdf)
 
 <use assets/MAF_System_Test_Table.pdf, page 2>
 Package pdftex.def Info: assets/MAF_System_Test_Table.pdf, page2 used on input 
-line 293.
+line 291.
 (pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
 File: assets/MAF_System_Test_Table.pdf Graphic file (type pdf)
 
 <use assets/MAF_System_Test_Table.pdf, page 2>
 Package pdftex.def Info: assets/MAF_System_Test_Table.pdf, page2 used on input 
-line 293.
+line 291.
 (pdftex.def)             Requested size: 561.86221pt x 795.10587pt.
  [10 <D:/Users/James/University Documents/Modules/SE315/Assignment/SE31520-MyAl
 coholFreeWine/Report/assets/MAF_System_Test_Table.pdf>]
-<assets/FR1_screen_1.png, id=192, 1370.11874pt x 655.44875pt>
+<assets/FR1_screen_1.png, id=194, 1370.11874pt x 655.44875pt>
 File: assets/FR1_screen_1.png Graphic file (type png)
 
 <use assets/FR1_screen_1.png>
-Package pdftex.def Info: assets/FR1_screen_1.png used on input line 299.
+Package pdftex.def Info: assets/FR1_screen_1.png used on input line 297.
 (pdftex.def)             Requested size: 469.75499pt x 224.71986pt.
 
-<assets/FR2_screen_1.png, id=193, 385.44pt x 207.77625pt>
+<assets/FR2_screen_1.png, id=195, 385.44pt x 207.77625pt>
 File: assets/FR2_screen_1.png Graphic file (type png)
 
 <use assets/FR2_screen_1.png>
-Package pdftex.def Info: assets/FR2_screen_1.png used on input line 308.
+Package pdftex.def Info: assets/FR2_screen_1.png used on input line 306.
 (pdftex.def)             Requested size: 140.92792pt x 75.9661pt.
 
-<assets/FR2_screen_2.png, id=194, 424.58624pt x 392.46625pt>
+<assets/FR2_screen_2.png, id=196, 424.58624pt x 392.46625pt>
 File: assets/FR2_screen_2.png Graphic file (type png)
 
 <use assets/FR2_screen_2.png>
-Package pdftex.def Info: assets/FR2_screen_2.png used on input line 315.
+Package pdftex.def Info: assets/FR2_screen_2.png used on input line 313.
 (pdftex.def)             Requested size: 140.92792pt x 130.26881pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 316--316
+Underfull \hbox (badness 10000) in paragraph at lines 314--314
 []\OT1/cmr/m/n/10.95 (b) |Search-ing Green for
  []
 
-<assets/FR2_screen_3.png, id=195, 280.04625pt x 202.7575pt>
+<assets/FR2_screen_3.png, id=197, 280.04625pt x 202.7575pt>
 File: assets/FR2_screen_3.png Graphic file (type png)
 
 <use assets/FR2_screen_3.png>
-Package pdftex.def Info: assets/FR2_screen_3.png used on input line 322.
+Package pdftex.def Info: assets/FR2_screen_3.png used on input line 320.
 (pdftex.def)             Requested size: 140.92792pt x 102.03748pt.
 
-<assets/FR3_screen.png, id=196, 706.64pt x 518.93875pt>
+<assets/FR3_screen.png, id=198, 706.64pt x 518.93875pt>
 File: assets/FR3_screen.png Graphic file (type png)
 
 <use assets/FR3_screen.png>
-Package pdftex.def Info: assets/FR3_screen.png used on input line 331.
+Package pdftex.def Info: assets/FR3_screen.png used on input line 329.
 (pdftex.def)             Requested size: 328.82706pt x 241.48615pt.
 
 
@@ -1249,32 +1248,32 @@ FR2_screen_1.png (PNG copy)> <D:/Users/James/University Documents/Modules/SE315
 /Assignment/SE31520-MyAlcoholFreeWine/Report/assets/FR2_screen_2.png (PNG copy)
 > <D:/Users/James/University Documents/Modules/SE315/Assignment/SE31520-MyAlcoh
 olFreeWine/Report/assets/FR2_screen_3.png (PNG copy)>]
-<assets/FR7_screen_1.png, id=204, 280.04625pt x 178.6675pt>
+<assets/FR7_screen_1.png, id=206, 280.04625pt x 178.6675pt>
 File: assets/FR7_screen_1.png Graphic file (type png)
 
 <use assets/FR7_screen_1.png>
-Package pdftex.def Info: assets/FR7_screen_1.png used on input line 339.
+Package pdftex.def Info: assets/FR7_screen_1.png used on input line 337.
 (pdftex.def)             Requested size: 187.89912pt x 119.88379pt.
 
-<assets/FR7_screen_2.png, id=205, 366.36874pt x 123.46124pt>
+<assets/FR7_screen_2.png, id=207, 366.36874pt x 123.46124pt>
 File: assets/FR7_screen_2.png Graphic file (type png)
 
 <use assets/FR7_screen_2.png>
-Package pdftex.def Info: assets/FR7_screen_2.png used on input line 346.
+Package pdftex.def Info: assets/FR7_screen_2.png used on input line 344.
 (pdftex.def)             Requested size: 187.89912pt x 63.32043pt.
 
-<assets/FR7_screen_3.png, id=206, 288.07625pt x 218.8175pt>
+<assets/FR7_screen_3.png, id=208, 288.07625pt x 218.8175pt>
 File: assets/FR7_screen_3.png Graphic file (type png)
 
 <use assets/FR7_screen_3.png>
-Package pdftex.def Info: assets/FR7_screen_3.png used on input line 356.
+Package pdftex.def Info: assets/FR7_screen_3.png used on input line 354.
 (pdftex.def)             Requested size: 187.89912pt x 142.73051pt.
 
-<assets/FR7_screen_6.png, id=207, 536.0025pt x 128.48pt>
+<assets/FR7_screen_6.png, id=209, 536.0025pt x 128.48pt>
 File: assets/FR7_screen_6.png Graphic file (type png)
 
 <use assets/FR7_screen_6.png>
-Package pdftex.def Info: assets/FR7_screen_6.png used on input line 363.
+Package pdftex.def Info: assets/FR7_screen_6.png used on input line 361.
 (pdftex.def)             Requested size: 187.89912pt x 45.03925pt.
 
 
@@ -1288,11 +1287,11 @@ oholFreeWine/Report/assets/FR3_screen.png (PNG copy)> <D:/Users/James/Universit
 y Documents/Modules/SE315/Assignment/SE31520-MyAlcoholFreeWine/Report/assets/FR
 7_screen_1.png (PNG copy)> <D:/Users/James/University Documents/Modules/SE315/A
 ssignment/SE31520-MyAlcoholFreeWine/Report/assets/FR7_screen_2.png (PNG copy)>]
-<assets/unit_test.png, id=215, 576.1525pt x 246.9225pt>
+<assets/unit_test.png, id=217, 576.1525pt x 246.9225pt>
 File: assets/unit_test.png Graphic file (type png)
 
 <use assets/unit_test.png>
-Package pdftex.def Info: assets/unit_test.png used on input line 381.
+Package pdftex.def Info: assets/unit_test.png used on input line 379.
 (pdftex.def)             Requested size: 469.75499pt x 201.33235pt.
 
 
@@ -1327,13 +1326,13 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
  This may cause the page layout to be inconsistent, however.
 
 [16]
-Underfull \hbox (badness 10000) in paragraph at lines 455--456
+Underfull \hbox (badness 10000) in paragraph at lines 453--454
 []\OT1/cmr/m/n/12 GitHub, 'jmettraux/rufus-scheduler', 2015. [On-line]. Avail-a
 ble:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 457--458
+Underfull \hbox (badness 10000) in paragraph at lines 455--456
 []\OT1/cmr/m/n/12 GitHub, 'bran-don-hilk-ert/-sucker[]punch', 2015. [On-line]. 
 Avail-able:
  []
@@ -1366,24 +1365,21 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 464.
  ) 
 Here is how much of TeX's memory you used:
- 17982 strings out of 493921
- 312440 string characters out of 3144875
- 391894 words of memory out of 3000000
- 20892 multiletter control sequences out of 15000+200000
+ 17978 strings out of 493921
+ 312338 string characters out of 3144875
+ 390501 words of memory out of 3000000
+ 20888 multiletter control sequences out of 15000+200000
  13178 words of font info for 51 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 56i,18n,55p,804b,1831s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{section*.16} has been referenced but does not exi
-st, replaced by a fixed one
-
-<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C
-:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/P
-rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Prog
-ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
-Output written on "SE315 2015-2016 MAF report jee22.pdf" (17 pages, 660350 byte
+ 56i,18n,55p,711b,1111s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:
+/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Pr
+ogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on "SE315 2015-2016 MAF report jee22.pdf" (17 pages, 659568 byte
 s).
 PDF statistics:
- 275 PDF objects out of 1000 (max. 8388607)
+ 276 PDF objects out of 1000 (max. 8388607)
  58 named destinations out of 1000 (max. 500000)
  239 words of extra memory for PDF output out of 10000 (max. 10000000)
 

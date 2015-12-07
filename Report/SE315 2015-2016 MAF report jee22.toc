@@ -1,6 +1,6 @@
 \contentsline {section}{Introduction}{3}{section*.2}
 \contentsline {section}{MAF Architecture}{3}{section*.3}
-\contentsline {section}{Web Service Architecture}{7}{section*.6}
+\contentsline {section}{Web Service Architecture}{6}{section*.6}
 \contentsline {section}{Test Strategy}{8}{section*.8}
 \contentsline {subsection}{System Testing}{8}{section*.9}
 \contentsline {subsection}{Unit Test for models and controllers}{13}{section*.15}
