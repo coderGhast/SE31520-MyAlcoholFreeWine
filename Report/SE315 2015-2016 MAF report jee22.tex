@@ -196,20 +196,20 @@
 
 \section{Introduction}
 
-The assignment task\cite{assignment} was to implement a web site using Ruby on Rails, and a Web Service with RESTful resources. The web site, MyAlcoholFreeWines.com (MAF), was to call two instances of the Web Service as Wine Suppliers, get their list of Wines and then display to a Customer the cheapest wines available, and place an order them if they wished. This report serves to document the design, testing and structure of my application, and as self evaluation of work carried out. All Wine images used for the application are credited to StockVault\cite{stockvault} from their Free Wine Stock Photos gallery.
+The assignment task\cite{assignment} was to implement a web site using Ruby on Rails, and a Web Service with RESTful resources. The web site, MyAlcoholFreeWines.com (MAF), was to call two instances of the Web Service as Wine Suppliers, get their list of Wines and then display to a Customer the cheapest wines available, and place an order for them if they wished. This report serves to document the design, testing and structure of my application, and as self evaluation of work carried out. All Wine images used for the application are credited to StockVault\cite{stockvault} from their Free Wine Stock Photos gallery.
 
 %----------------------------------------------------------------------------------------
 %	MAF ARCHITECTURE
 %----------------------------------------------------------------------------------------
 
 \section{MAF Architecture}
-For the MAF, I knew that I had to have some way of storing the Wines when I got results back from the Web Services. I considered I could keep them in memory, which might be okay for a very small application, but is completely un-scalable for an application that could be used by many and with multiple massively stocked Wine Suppliers. I chose to keep the Wines received in a Database and represent them as entities, where I would store all Wines provided by each supplier, but only the cheapest of each Wine.
+My experience with Ruby on Rails before the assignment was very limited, and I was unsure how to begin to design the architecture. I knew I would be using MVC, and that I would have HTTP requests coming through the browser to RESTful endpoints on my controllers. The controllers would then talk to the Model classes they were associated with, and the view would display what the controller had for them.
 
-The preliminary design of the application was based on the example provided in the `Agile Web Development with Rails'\cite{railsbook} book, and then modified to meet the requirements. This was a good starting place for learning how to implement Sessions and Baskets as I was very new to Rails and lacked understanding to implement it at the start of this assignment.
+To get a good starting point for my application, the preliminary design was based on the example provided in the `Agile Web Development with Rails'\cite{railsbook} book, and then heavily modified in order to suit my own needs and the requirements of the assignment. This starting point allowed me to see the MVC structure and how to begin writing the application.
 
-My main entities in the design for MAF are Wines, Customer, CustomerDetail, Basket and BasketItem. These all have their own controllers, views and models. There is also a controller for Sessions, which refers to when a Customer is on the website and has a `session', allowing them to be logged in and retain a Basket with BasketItems as they navigate through the site, until their session ends.
+In order to fulfill the requirements, I needed a number of entities: Wines, Customers, CustomerDetails, Baskets and BasketItems. These all have their own controllers, views and models, where their data is stored in a local Sqlite3 database during developement. I also implemented a controller for Sessions, which refers to when a Customer is on the website and has a `session', allowing them to be logged in and retain a Basket as they navigate through the site, until their session ends.
 
-You can see below what my design for the database entities and their relationships were when I started.
+I knew that I had to have some way of storing the Wines when I got results back from the Web Services. I considered I could keep them in memory, which might be okay for a very small application, but would be completely un-scalable for an application that could be used by many people at once and with multiple massively stocked Wine Suppliers to call to. I chose to keep the Wines received in a Database and represent them as entities, where I would store all Wines provided by each supplier, but only the cheapest of each Wine.
 
 \begin{figure}[H]
         \centering
@@ -233,15 +233,20 @@ Based on what I expected to need, I made the target class design diagram that ca
 
 You can see that the SessionsController interacts with the Basket and CustomerDetail model, in order to keep the customer logged in with a persistent basket while they browse.
 
-To get the Wines, calls are scheduled to be made every 60 seconds, using rufus-scheduler gem\cite{rufus} and are made asynchronously with SuckerPunch gem\cite{suckerpunch}, from my own class WebServiceCaller. This ensures that a user is not interrupted while they browse and the Wines are always kept up to date without making calls to the Web Suppliers too frequently. The WebServiceCaller gets the list of Wines from the Web Services listed in config, checks to see if the Wine is cheaper from a different supplier than the one known and makes this the new version of that Wine if it is. Otherwise it just confirms there are updates to the Wine given and updates it if there are. 
+To get the Wines, HTTP POST requests are scheduled to be made every 60 seconds to each known Web Service, using rufus-scheduler gem\cite{rufus} and are made asynchronously with SuckerPunch gem\cite{suckerpunch}, from my own class WebServiceCaller. This ensures that a user is not interrupted while they browse and the Wines are always kept up to date without making calls to the Web Suppliers too frequently. 
 
-When we get the Wines from the Web Service, I chose only to get the image url, that matched with images already in MAF, rather than to link back to the Web Service. Through doing this, it leaves the application open to be able to be expanded upon later to get an actual copy of the images and store them in assets. I feel this is a better choice than linking back to the original images, as the bandwidth usage would increase on the Supplier web site through our image link back to them.
+The WebServiceCaller gets the list of Wines from the Web Services listed in a config file, checks to see if the Wine is cheaper from a different supplier than the one known and updates the Wine to reflect the alternate supplier's wine if it is cheaper. Otherwise it just confirms there are updates to the Wine given and updates it if there are. Wines between different suppliers are distinguished by their product name only. In a real version of this application, a unique universal identifier would perhaps be more appropriate, such as a bar code.
+
+For the images of the wine bottles, I chose only to get the image url from the Web Service that matches with images already in MAF, rather than to link back to the Web Service. Through doing this, it leaves the application open to be able to be expanded upon later to get an actual copy of the images and store them in assets. I feel this is a better choice than linking back to the original images, as the bandwidth usage would increase on the Supplier web site through our image link back to them.
 
 In order to fulfill the functional requirement of Search, I decided to use Solr with the Sunspot gem \cite{solrsunspot}. This allows for fulltext search and partial text search using NGrams, through any fields set as `searchable' on an entity. The allowing of partial search needs to be set up in the scheme configuration of Solr in order to work, but is very powerful once it is running. In order to use Solr, we must set up a local Solr server to use, and allow it to reindex for our records in order to find them.
 \begin{lstlisting}
 bundle exec rake sunspot:solr:start # or sunspot:solr:run
 rake sunspot:reindex
 \end{lstlisting}
+There are a number of gems to be used for Search, or even writing a method to do it for us through SQL queries. I chose to use Solr, however, as it had exactly what I needed in order to search through my list of Wines, without me trying to re-implement exactly what it does already.
+
+I chose to keep Customer and CustomerDetails separate, where CustomerDetails actually refers to an id, customer email and their password digest. By keeping the Customer and CustomerDetails separate, it allows us in future to allow Customers to update their information in the Customer table without affecting or accessing the CustomerDetails. Similarly, if an attacker found their way into the Customer table, they wouldn't automatically also have access to the CustomerDetails table too, giving us added security through this separation.
 
 Sending Orders to the Web Service is as simple as when a Customer clicks Checkout (while logged in), the order is sent to a method where a JSON body is built into a POST request for each Wine, and the order(s) is then sent to the respective suppliers of the Wines requested by the order. In a future version of the application, it would be preferable to have Orders kept in the database, to allow a Customer to see their previous orders.
 
@@ -251,7 +256,7 @@ Sending Orders to the Web Service is as simple as when a Customer clicks Checkou
 
 \section{Web Service Architecture}
 
-Since I was new to Rails, I chose to start developing my Web Service first, using Rails, to get comfortable with Ruby and the Rails framework. The Web Service only needed to know about two things, Wines and Orders, with RESTful routes to access what is needed for them, in this case a GET for wines.json, and POST for orders, to place an order and store it in the database.
+Since I was new to Rails, I chose to start developing my Web Service first, using Rails over any other language to get comfortable with Ruby on Rails. The Web Service only needed to know about two things, Wines and Orders, with RESTful routes to access what is needed for them, in this case a GET for wines.json, and POST for orders, to place an order and store it in the database. With this in mind, my target classes before implementation are shown below.
 
 \begin{figure}[H]
         \centering
@@ -260,17 +265,16 @@ Since I was new to Rails, I chose to start developing my Web Service first, usin
                 \label{fig: Target Class Diagram.} 
 \end{figure}
 
-Using RESTful endpoints, we don't need to define specific routes for certain things, and can just let Rails handle it, as long as we define that Orders and Wines are resources. When getting the Wine data, a GET request comes from MAF to the WinesController with a http header for when the service was last accessed by the MAF. The Web Service then gets all Wines in the database that were created or updated after the time MAF last asked for them and returns them in JSON format, along with its name, e.g.
+Using RESTful endpoints, we don't need to define specific routes for certain things, and can just let Rails handle it, as long as we define that Orders and Wines are resources. When providing the Wine data, a GET request comes from MAF to the WinesController that includes a custom HTTP header for when the service was last accessed by the MAF. The Web Service uses the time value from this header and gets all Wines in the database that were created or updated after the time MAF last asked for them and returns them in JSON format, along with its name, e.g.
 \begin{lstlisting}
 {"id":14,"name":"Abracadabwine","description":"Better than Magic! Tasty!","image_url":"wine6.jpg","price":"5.01","country_of_origin":"Poland","grape_type":"Green","suitable_for_vegetarians":true,"bottle_size":"350ml","url":"http://localhost:3001/wines/14.json","supplier":"Wine Supplier A"}
 \end{lstlisting}
 
-Doing this cuts down on the amount of database operations on the MAF side, and the bandwidth used by the Supplier. I originally had a method for deleting Wines no longer existing in any Web Service. This worked well for removing Wines that a supplier no longer displayed on their own website, until I implemented the check to only send wines that had been created or updated since I last called it. The delete function then started deleting all Wines in MAF except those updated.
+Doing this cuts down on the amount of database operations on the MAF side, and the bandwidth used by the Supplier to return the Wines. I originally had a method for deleting Wines no longer existing in any Web Service which worked until I implemented the check to only send wines that had been created or updated since I last called it. The delete function then started deleting all Wines in MAF except those updated.
 
-I commented out the function, as it is no longer able to be used with the way I have implemented the communication between the MAF and Web Services, but left it in the code base for potential future reuse. However, if I were to do this again, I would have a flag on each Wine sent by the Web Service that says what status it is in (In Stock, Out of Stock, Discontinued) and use this flag to determine whether to keep or delete a Wine from the MAF database.
+I commented out the function, as it is no longer able to be used with the way I have implemented the communication between the MAF and Web Services, but left it in the code base for potential future reuse. However, if I were to do this again, I would have a flag on each Wine in the JSON sent by the Web Service that says what status it is in (In Stock, Out of Stock, Discontinued) and use this flag to determine whether to keep or delete a Wine from the MAF database.
 
-When it comes to receiving Orders, the Web Service receives a body of JSON that it parses into an Order entity and puts into the database, which is enough for this prototype. Each order contains the required customer information, the ID of the Wine in the Web Supplier (saved as 'Product Number' in MAF) and the quantity of the Wine to be ordered. I included a view for the Orders so I could see that the Orders were correctly sent by MAF.
-
+When it comes to receiving Orders, the Web Service OrdersController receives a body of JSON that it parses into an Order entity and puts into the database if it passes the model validation, which is enough for this prototype. Each order contains the required customer information (name, email, address), the ID of the Wine in the Web Supplier (saved as 'Product Number' in MAF) and the quantity of the Wine to be ordered. I included a view for the Orders so I could see that the Orders were correctly sent by MAF.
 
 %----------------------------------------------------------------------------------------
 %	TEST STRATEGY
@@ -278,9 +282,9 @@ When it comes to receiving Orders, the Web Service receives a body of JSON that 
 
 \section{Test Strategy}
 \subsection{System Testing}
-I helped myself focus on implementing the functional requirements through using a system test table, indicating what the system should be like and how it should respond based on assumptions the functional requirements. I wrote my system test table and gradually went through them one by one to ensure my system passed them. I added some tests to the table that were out of scope of the application but that I thought would be good inclusions into it.
+I helped myself focus on implementing the functional requirements through using a system test table, indicating what the system should be like and how it should respond based on assumptions the functional requirements. I wrote my system test table after reading the requirements of the application and gradually went through them one by one as I implemented my design, to ensure my system met the requirements.
 
-The majority of my system tests passed, and completing each functional requirement and fulfilling each system test was pretty satisfying. If this system were more than a prototype, I'd advance on these system tests much further. My System Test Table can be seen below.
+The majority of my system tests passed, and completing each functional requirement and fulfilling each system test was pretty satisfying. If this system were more than a prototype, I'd advance on these system tests much further to include more in-depth testing on system validation of user input, the security of sessions and more examples of searching for Wines using Solr. The system test table and my results from it can be seen below.
 
 \includepdf[pages=-]{assets/MAF_System_Test_Table.pdf}
 
